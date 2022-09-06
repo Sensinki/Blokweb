@@ -19,7 +19,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Sena Nur Korkutan
 
   #### Je startniveau:
-  Blauw en rood niveau
+  Rood niveau
 
   #### Je focus:
   Surface plane
