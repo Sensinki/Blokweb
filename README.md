@@ -55,33 +55,94 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Toegankelijkheidstest 1/2 (week 1)
 
 <details>
-  <summary>uitwerken na test in 1e werkgroep</summary>
+  <summary>Uitwerken na test in 1e werkgroep</summary>
 
   ### Bevindingen
+
   Lijst met je bevindingen die in de test naar voren kwamen:
+
+  +++++
+  -Bewegen van knoppen is goed. Omdat je kan begrijpen dat het een knop is.
+  -Als je hovert, opent het menu elementen. Het is echt handig.
+
+  -----
+  -Responsive design is soms traag.
+  -Als er zwakke internet connection is, kan foto's niet lekker werken.
+
+
+  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  -Ik kan de website responsive maken.
+  -Ik kan een uitleg over het product schrijven zodat gebruiker de product zou weten als het internet niet lekker is.
+
 
   #### Screenreader
   Hier korte omschrijving (met indien nodig afbeeldingen)
 
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  +++++
+  -De lopende volgerde van elementen zijn goed.
+  -Elke section heeft een kopje het ziet goed eruit.
 
+  -----
+  -Sommige elementen (bijv. mail input plek) staan niet in de juiste kategorie.  
+  -Bij sommige kategorieen (words, letters, form controls en window spots) werken niet lekker. Mischien komt het door dat wij de VoiceOver functie niet goed kan gebruiken.
+
+  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  <img src="readme-images/IMG_4168.png" width="375px" alt="screenreader">
+
+  -Het zou handig zijn als ik de semantiek van het html bestand goed maak.
+  -
 
   #### Muis en Toetsenbord 
+
   Hier korte omschrijving (met indien nodig afbeeldingen)
 
-  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  +++++
+  -Site is duidelijk en beeindigd snel omdat er veel foto's staan.
+  -Het is echt makkelijk te volgen en werkt lekker met toetsenbord.
 
+  -----
+  -Soms linkjes van menubalk is irritant.
+  
+  
+
+  Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  -Bij menubalk kan gebruiker altijd skippen met klikken in een andere plek. Wij kunnen de site niet helemaal veranderen.
 
   #### Motoriek (shocks, elastiekjes)
   Hier korte omschrijving (met indien nodig afbeeldingen)
 
+  +++++
+  -Knoppen zijn groot. Dus er was niet een probleem met klikken van knoppen.
+  -Bij scrollen was het ook niet een probleem.
+
+  -----
+  -Er was een linkje een beetje moeilijk te kunnen klikken.
+  -Het doet pijn.
+
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  -Ik kan die linkje misschien in een knop zetten of de klikbare plek (padding of margin) vergroten zonder borders.
+  
 
 
   #### Visueel (brillen, contrast, kleurenblind, dark/light). 
   Hier korte omschrijving (met indien nodig afbeeldingen)
 
+  +++++
+  -De website ziet brillen met klueren (gele bril, bril met zwarte puntje etc.) goed eruit en werkt probleemloos.
+  -De website ziet met andere brillen beetje moeilijk maar wel nog steeds leesbaar.
+  -Er is geen probleem met zien van belangrijke elementen bij kleurblind.
+
+  -----
+  -Met de sterke blur bril kan de gebruiker bijna niks te zien. Ook is het heel moeilijk het muis te vinden.
+  -Met blur bril en bril met puntje is alles moeilijk te zien. Kopjes en subkopjes kun je wel lezen maar teksten niet.
+  -Het is niet mogelik de taal knop te zien in paar van de kleurbliinden modus. 
+  -In de laatste kleurblind modus kan de gebruiker niet makkelijk weten dat een link een link is. Omdat er geen kleur. (In de site word gebruik maken van de kleuren om gebruiker laten te zien dat het een linkje is. Maar voor kleurblinden werkte het gewoon niet lekker.)
+  
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  -Ik kan misschien koppen nog groter of dikker doen.
+  -Ik kan de linkjes een klein animatie toevoegen zodat kleurblinden mogen ook weten dat het een linkje is.
+  -Ik kan de taal knop veranderen met wereld icoontje of  met een tekstje dat laten zien welke taal het is.
+
 
 </details>
 
