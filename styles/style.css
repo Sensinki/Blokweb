@@ -20,6 +20,7 @@ button, summary {
 	/* startje */
 	--color-text:#111;
 	--color-background:#eee;
+	--sticky-header-color: #096182;
 }
 
 
@@ -31,6 +32,25 @@ button, summary {
 /****************/
 
 /* jouw code */
+
+/* HEADER */
+
+header {
+	background-color: 	var(--sticky-header-color);
+	display: flex;
+
+}
+
+.logo {
+	height: 50px;
+	width: auto;
+}
+
+header nav ul li {
+	list-style: none;
+	
+}
+
 
 body {
   color:var(--color-text);
