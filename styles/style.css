@@ -18,9 +18,17 @@ button, summary {
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--text-and-footer-color:#191919;
 	--sticky-header-color: #096182;
+	--light-blauw-color: rgb(215,233,249);
+	--laatbezorgen-knop-color: #2C2A29;
+	--white-text-and-box-color: #FFFFFF;
+	--icon-background-color: #FFB915;
+	--second-section-background-color: #D9E8F7;
+	--knop-color: #0475A1;
+	--first-footer-deel-color: #3A780E;
+	--website-background-color: linear-gradient(180deg, rgba(87,161,205,1) 0%, rgba(212,227,239,1) 100%);
+
 }
 
 
@@ -33,10 +41,20 @@ button, summary {
 
 /* jouw code */
 
+/* BODY */
+
+body {
+	color:var(--color-text);
+	background-image: var(--website-background-color);
+	margin:0;
+  }
+
 /* HEADER */
 
+
 header {
-	background-color: 	var(--sticky-header-color);
+	background-color: var(--sticky-header-color);
+	
 	display: flex;
 
 }
@@ -52,8 +70,4 @@ header nav ul li {
 }
 
 
-body {
-  color:var(--color-text);
-  background-color:var(--color-background);
-}
 
