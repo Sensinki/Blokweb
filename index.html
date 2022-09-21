@@ -1,119 +1,156 @@
 <!doctype html>
 <html lang="nl">
-	
+<!-- shift tab alle rijen worden terug -->
 <head>
 	<meta charset="UTF-8">
-	<meta name="author" content="jouw naam">
+	<!-- verander dingen naar je eigen informatie -->
+	<meta name="Sena Nur Korkutan" content="jouw naam">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>Howdy FED2223</title>
+	<title>Home | Ben & Jerry's</title>
 	
 	<link href="styles/style.css" rel="stylesheet">
+	<!-- icon op de pagina moet nog veranderen -->
 	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+	<link rel="stylesheet" href="https://use.typekit.net/hlx7huo.css">
 </head>
 
 <body>
+
+	<!-- elke section moet h1,2,3 -->
 	<header>
-			<nav>
+		<a  href="index.html">
+			<img src="images/logo.png" alt="logo">
+		</a>
+
+		<p><a href="">Laat Ben & Jerry's nu bezorgen ></a></p>
+
+
+		<button aria-label="hamburger menu">
+			<!-- <img src="images/hamburger-menu.png" alt="menu"> -->
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<a href="">Nu bezorgen</a>
+
+		<!-- submenu niet nodig, maak ze niet -->
+		<!-- hamburger menu moet nog verwerken -->
+		<nav>
 			<ul>
+					
+				<li><a href="">Smaken</a></li>
+				<li><a href="">Vind een verkooplocatie</a></li>
+				<li><a href="">Waarden</a></li>
+				<li><a href="">Over ons</a></li>
+				<li><a href="">Wat is nieuw</a></li>
+				
+			
 				<li>
-					<a  href="index.html">
-					<img class="logo" src="images/pngegg.png" alt="logo">
-					</a>
-				</li>	
-				<li><a href="">NU BEZORGEN</a></li>
-				<li>
-					<button> /* hamburger menu */ </button>
+					<form action="">
+						<input type="search">
+						<button type="submit" aria-label="zoeken">
+							<img src="" alt="">
+						</button>
+					</form>
 				</li>
-				<li><a href="">Laat Ben & Jerry's nu bezorgen -></a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<main>
+		<!-- <h1>Ben & Jerry's</h1>  gaat weg in css -->
 		<section>
-			<h1>Nieuw: A Chocolatey Love-A-Fair</h1>
-			<img src="" alt="A Chocolatey Love-A-Fair Ben & Jerry's doos">
-			<button>LEES MEER</button>
+			<h2>Nieuw: A Chocolatey Love-A-Fair</h2>
+			<img src="images/hoofd-foto.png" alt="A Chocolatey Love-A-Fair Ben & Jerry's doos">
+			<!-- maak a zoals een button -->
+			<a href="">Lees meer</a>
 		</section>
 
-		<section>
+		<section aria-label="Onze producten, waarden & missie">
 			<article>
 				<h2>Bewuste ingredienten</h2>
-				<img src="" alt="koe icoontje">
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi impedit qui asperiores magni voluptatem iusto, nobis vel deserunt neque quibusdam officia labore. Ullam nesciunt natus explicabo magnam ea non odio.</p>
+				<img src="images/v2-cow.png" alt="koe icoontje">
+				<p>Onze ingrediënten ondersteunen positieve verandering en laten ons ijs fairrukkelijk smaken!</p>
 				<a href="">Onze productie</a>
 			</article>
 
 			<article>
 				<h2>Gezamenlijk succes</h2>
-				<img src="" alt="koe icoontje">
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi impedit qui asperiores magni voluptatem iusto, nobis vel deserunt neque quibusdam officia labore. Ullam nesciunt natus explicabo magnam ea non odio.</p>
+				<img src="images/v2-peace.png" alt="koe icoontje">
+				<p>We streven ernaar om welvaart te creëren voor iedereen die met ons bedrijf verbonden is.</p>
 				<a href="">Onze waarden & missie</a>
 			</article>
 
 			<article>
 				<h2>Een verschil maken</h2>
-				<img src="" alt="koe icoontje">
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi impedit qui asperiores magni voluptatem iusto, nobis vel deserunt neque quibusdam officia labore. Ullam nesciunt natus explicabo magnam ea non odio.</p>
+				<img src="images/v2-earth.png" alt="koe icoontje">
+				<p>We willen zichtbaarheid en support geven aan de onderwerpen waar wij zelf in geloven</p>
 				<a href="">Onderwerpen die ons bezig houden</a>
 			</article>
 		</section>
 
-		<img src="" alt="Lekker ijsje in het bord">
+		<!-- <img src="" alt="Lekker ijsje in het bord"> background image in css -->
 
 		<section>
 			<h2>Hoe wil jij graag je euforie?</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolor voluptatibus quis dolorum cupiditate debitis sed impedit itaque, quod autem corrupti quam, nulla, enim accusamus sapiente est quidem ea doloribus.</p>
+			<p>Er zijn zoveel manieren om van Ben & Jerry's te genieten. En met al onze smaken, is er voor iedereen wat wils.</p>
 
-			<section>
-				<h3>Classics</h3>
-				<img src="" alt="Een soort van de classic ijsjes">
-			</section>
+			
+			<ul>
+				<li>
+					<h3>Classics</h3>
+					<img src="images/ijsjes/cookie-dough-landing.png" alt="Een soort van de classic ijsjes">
+				</li>
+	
+				<li>
+					<h3>Non-Diary</h3>
+					<img src="images/ijsjes/chocolatey-love-a-fair-non-dairy-landing-closed.png" alt="Een soort van de non-diary ijsjes">
+				</li>
 
-			<section>
-				<h3>Non-Diary</h3>
-				<img src="" alt="Een soort van de non-diary ijsjes">
-			</section>
+				<li>
+					<h3>Sundaes</h3>
+					<img src="images/ijsjes/hazel-nuttin-but-chocolate-closed.png" alt="Een soort van de sundae ijsjes">
+				</li>
+	
+				<li>
+					<h3>Netflix Original Ijssmaken</h3>
+					<img src="images/ijsjes/netflix-chilld-landing-closed.png" alt="Een soort van de netflix original ijssmaak ijsjes">
+				</li>
 
-			<section>
-				<h3>Sundaes</h3>
-				<img src="" alt="Een soort van de sundae ijsjes">
-			</section>
-
-			<section>
-				<h3>Netflix Original Ijssmaken</h3>
-				<img src="" alt="Een soort van de netflix original ijssmaak ijsjes">
-			</section>
-
-			<section>
-				<h3>Topped</h3>
-				<img src="" alt="Een soort van de topped ijsjes">
-			</section>
+				<li>
+					<h3>Topped</h3>
+					<img src="images/ijsjes/topped-chocolate-caramel-cookie-dough-landing.png" alt="Een soort van de topped ijsjes">
+				</li>
+			</ul>
 
 		</section>
 
+		<!-- article moet betekenisvol zijn -->
 		<section>
 			<h2>Recent Highlights</h2>
 
 			<section>
-				<img src="" alt="Frisse ijs doos">
-				<a href="">Vind ijs bij mijn buurt</a>
+				<!-- met css omdraaien  flex-->
+				<h3><a href="">Vind ijs bij mijn buurt</a></h3>
+				<img src="images/Global_delivery.jpeg" alt="Frisse ijs doos">
+			</section>
+			<!-- doe hetzelfde alles naar beneden -->
+
+			<section>
+				<h3><a href="">Caramel Brownie Movie Night met Pathé Thuis film cadeau!</a></h3>
+				<img src="images/NL_spotlight_caramel-brownie-movie-night.jpeg" alt="Movie night foto met een Ben & Jerry's ijs">
 			</section>
 
 			<section>
-				<img src="" alt="Movie night foto met een Ben & Jerry's ijs">
-				<a href="">Caramel Brownie Movie Night met Pathé Thuis film cadeau!</a>
+				<h3><a href="">30yrs of Cookie Dough vieren wij met heel veel Dough!</a></h3>
+				<img src="images/GR_flavors.jpeg" alt="Cookie dough ijs doos">
 			</section>
 
 			<section>
-				<img src="" alt="Cookie dough ijs doos">
-				<a href="">30yrs of Cookie Dough vieren wij met heel veel Dough!</a>
-			</section>
-
-			<section>
-				<img src="" alt="#SOSMoria brieven">
-				<a href="">3400 brieven voor #SOSMoria. What's next, lees hier meer.</a>
+				<h3><a href="">3400 brieven voor #SOSMoria. What's next, lees hier meer.</a></h3>
+				<img src="images/NL_spotlight_SOSMoriawhatnext.jpeg" alt="#SOSMoria brieven">
 			</section>
 
 		</section>
@@ -122,7 +159,7 @@
 	<footer>
 
 		<section>
-			<h2>Het Is Als Een Toetje Voor Je Inbox</h2>
+			<h2>Het is als een toetje voor je inbox</h2>
 			<p>Meld je aan voor onze e-mail nieuwsbrief en krijg een inside scoop</p>
 
 			<form action="">
@@ -132,7 +169,7 @@
 
 		</section>
 
-		<section>
+		<section aria-label="sociaal">
 			<ul>
 				<li><a href=""><img src="" alt="facebook icoon"></a></li>
 				<li><a href=""><img src="" alt="twitter icoon"></a></li>
@@ -140,7 +177,7 @@
 			</ul>
 		</section>
 
-		<section>
+		<section aria-label="footer">
 			<ul>
 				<li><a href="">Neem contact met ons</a></li>
 				<li><a href="">Press</a></li>

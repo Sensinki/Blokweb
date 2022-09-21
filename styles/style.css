@@ -1,3 +1,20 @@
+/*****************/
+/* WEBSITE FONTS */
+/*****************/
+
+@font-face {
+    font-family: 'chunkfive_printregular';
+    src: url('/assets/fonts/chunkfive_print_400-webfont.woff2') format('woff2'),
+         url('/assets/fonts/chunkfive_print_400-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+	/* Note voor mijzelf: Gebruik die twee als font in de pagina */
+	/* font-family: 'proxima-nova', 'sans-serif'; */
+	/* font-family: 'chunkfive_printregular', 'sans-serif'; */
+
+}
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -17,9 +34,9 @@ button, summary {
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
+	/* kleuren */
 	--text-and-footer-color:#191919;
-	--sticky-header-color: #096182;
+	--sticky-header-color: #003E55;
 	--light-blauw-color: rgb(215,233,249);
 	--laatbezorgen-knop-color: #2C2A29;
 	--white-text-and-box-color: #FFFFFF;
@@ -31,9 +48,7 @@ button, summary {
 
 }
 
-
-
-
+	
 
 /****************/
 /* JOUW STYLING */
@@ -41,33 +56,294 @@ button, summary {
 
 /* jouw code */
 
+/* ALLES */
+
+* {
+	font-family: 'proxima-nova', 'sans-serif';
+}
+
+
 /* BODY */
 
 body {
 	color:var(--color-text);
 	background-image: var(--website-background-color);
 	margin:0;
+	position: relative;
   }
+
 
 /* HEADER */
 
 
 header {
+	/* background kleur */
 	background-color: var(--sticky-header-color);
-	
+	/* om header sticky te maken */
+	position: sticky;
+	/* voor Safari */
+	position: -webkit-sticky; 
+	/* waar wil ik het stickky maken */
+	top: 0;
+
+	/* flex maken zodat de elementen naast elkaar nog beter kunnen staan */
 	display: flex;
-
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	/* elementen toestemming geven om een andere rij te staan */
+	/* hulp gekregen van Sanne */
+	flex-wrap: wrap;
+	
+	/* om header helemaal voor halen */
+	z-index: 1;
 }
 
-.logo {
-	height: 50px;
-	width: auto;
+
+
+/* navbar start */
+
+nav {
+	position: fixed;
+	inset: 0;
+	background-color: #FFB915;
+	transform: translateY(-100%);
+	transition: .5s;
 }
 
+header.menuOpen nav {
+	transform: translateY(0);
+}
+
+/* navbar end */
+
+
+
+/* logo start */
+header > a:nth-of-type(1) {
+	margin-right:auto;
+	order: -1;
+}
+
+header > a:nth-of-type(1) img {
+	height: auto;
+	width: 30vw;
+	
+}
+/* logo end */
+
+/* media dingen start*/
+
+@media screen and (min-width: 768px) {
+	main {
+		background-color: #ffb9153a;
+		
+	}
+}
+
+@media screen and (max-width: 768px) {
+	/* logo part van media */
+	header > a:nth-of-type(1) {
+		margin-right:auto;
+	}
+	
+	header > a:nth-of-type(1) img {
+		height: auto;
+		width: 30vw;
+  	}
+}
+/* media dingen end */
+
+/* "laat ben en jerry's..." tekst goede plek zetten start*/
+header > p {
+	order:-2;
+	background-color: var(--laatbezorgen-knop-color);
+	color:white;
+	width:100%;
+	margin: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-family: 'proxima-nova', 'sans-serif';
+}
+
+header > p a {
+	color: var(--color-text);
+}
+
+/* "laat ben en jerry's..." tekst goede plek zetten end*/
+
+/* hamburger menu inside styling */
 header nav ul li {
 	list-style: none;
-	
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
 }
 
+header nav ul li a {
+	font-family: 'chunkfive_printregular', 'sans-serif';
+	margin: .5em;
+	font-size: 1.5em;
+}
+
+header nav ul li:nth-of-type(1) a {
+	margin-top: 10em;
+
+}
+
+/* hamburger menu knop styling start*/
+
+header button {
+	/* background-color: var(--sticky-header-color); */
+	display:grid;
+ 	place-items:center;
+	background-color: transparent;
+	border: none;
+	width: 1.5em;
+	height: 1.5em;
+	position: relative;
+	margin-right: 1em;
+	order:2;
+	z-index: 100;
+}
+
+header button span {
+	position: absolute;
+	width: 1.2em;
+	height: .2em;
+	background-color: var(--white-text-and-box-color);
+	transition-duration: .5s;
+}
+
+header button span:nth-of-type(1) {
+	transform:translateY(.4em);
+}
+
+header button span:nth-of-type(3) {
+	transform:translateY(-.4em);
+}
+
+header button.menuOpen span:nth-of-type(1) {
+	transform:rotate(45deg) scaleX(1.25);
+}
+
+header button.menuOpen span:nth-of-type(2) {
+	transform: scaleX(0);
+}
+
+header button.menuOpen span:nth-of-type(3) {
+	transform:rotate(-45deg) scaleX(1.25);
+}
+
+
+/* header button {
+	border-style: none;
+	min-width: auto;
+	background-color: var(--sticky-header-color);
+	order: 1;
+	margin: 0;
+	padding: 0;
+	margin: 1em; 
+}
+
+header button img {
+	height: auto;
+	width: 20px;
+} */
+/* hamburger menu knop styling end*/
+
+/* alle linken in header */
+header a {
+	color: var(	--white-text-and-box-color);
+	text-decoration: none;
+	font-family: 'proxima-nova', 'sans-serif';
+
+}
+
+/* alle linken */
+a {
+	color: var(	--white-text-and-box-color);
+	text-decoration: none;
+}
+
+/* tweede child van het parent in het header ("nu bezorgen" linkje) */
+header a:nth-of-type(2) {
+	/* order: 1; */
+	color: var(	--white-text-and-box-color);
+	text-decoration: none;
+	font-family: 'chunkfive_printregular', 'sans-serif';
+	font-weight: 400;
+	text-transform: uppercase;
+	width: 7rem;
+    text-align: center;
+	border-right: 2px solid var(--white-text-and-box-color);
+	padding-right: 1em;
+}
+
+
+/* styling alle sections */
+section {
+	position: relative;
+ 	text-align: center;
+  	color: white;
+	/* om section elementen onder de header te zetten */
+	z-index: -1;
+}
+
+/* alle h1 en h2 titels in het sections */
+section h1, h2 {
+	font-family: 'chunkfive_printregular', 'sans-serif';
+}
+
+/* maakt allen img in de eerste section in het pagina */
+section:nth-of-type(1) img {
+	width: 100%;
+	background-repeat: no-repeat;
+    background-position: center;
+}
+
+section:nth-of-type(1) a {
+	
+	background-color: var(--white-text-and-box-color);
+	color: var(--text-and-footer-color);
+	padding-right: 2em;
+	padding-left: 2em;
+	padding-top: .75em;
+	padding-bottom: .75em;
+	position: absolute;
+	top: 50%;
+	left: 70%;
+}
+
+/* media nodig */
+/* titel op de img te komen*/
+section:nth-of-type(1) h2 {
+	position: absolute;
+	top: 20%;
+	left: 80%;
+	transform: translate(-50%, -50%);
+
+}
+/* list elementen list decoration */
+li {
+	list-style: none;
+}
+
+/* section met iconen deel */
+section:nth-of-type(2) {
+	background-color: #3A780E;
+	margin-bottom: 1em;
+}
+section:nth-of-type(2) article{
+	width: 80%;
+	display: grid;
+	grid-template-columns: 2;
+	grid-template-rows: 3;
+}
+
+section:nth-of-type(2) article img {
+	width: 5em;
+}
 
 
