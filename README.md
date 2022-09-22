@@ -171,10 +171,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Voortgang 1 (week 2)
 
 <details>
-  <summary>uitwerken voor 1e voortgang</summary>
+  <summary>Uitwerken voor 1e voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
 
 
   ### Agenda voor meeting
@@ -188,12 +188,16 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Verslag van meeting
-  hier na afloop snel de uitkomsten van de meeting vastleggen
+  Hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Ik moet dingen verbeteren op <head> (personaal informatie toevoegen)
+  - Section begint altijd met een titel. Als het niet zo is, voeg een aria-label toe.
+  - Article is ook een speciale section.
+  - Maak een goede html. Dan kan je met css dingen verbeteren. (bijv. uppercase maken en semantische goed html elementen omdraaien)
+  - Als main heeft geen titel, maak een titel. Daarna kan je hem in css wegsturen.
+  - Soms ul li werkt beter dan paar sections. Kijk goed naar de situatie.
+  - Article moet betekenisvol zijn.
+  - Ik heb handige shortcuts geleerd.
 
 </details>
 
