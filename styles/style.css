@@ -68,10 +68,20 @@ button, summary {
 body {
 	color:var(--color-text);
 	background-image: var(--website-background-color);
+	background-repeat: no-repeat;
+	height: 100%;
 	margin:0;
 	position: relative;
   }
 
+/* alle list elementen list decoration */
+li {
+	list-style: none;
+}
+
+h3 {
+	display: flex;
+}
 
 /* HEADER */
 
@@ -102,6 +112,7 @@ header {
 
 
 /* navbar start */
+/* NOG TE DOEN */
 
 nav {
 	position: fixed;
@@ -121,7 +132,7 @@ header.menuOpen nav {
 
 /* logo start */
 header > a:nth-of-type(1) {
-	margin-right:auto;
+	margin-right: auto;
 	order: -1;
 }
 
@@ -158,7 +169,7 @@ header > a:nth-of-type(1) img {
 header > p {
 	order:-2;
 	background-color: var(--laatbezorgen-knop-color);
-	color:white;
+	color: var(--white-text-and-box-color);
 	width:100%;
 	margin: 0;
 	padding-top: 5px;
@@ -269,7 +280,7 @@ a {
 }
 
 /* tweede child van het parent in het header ("nu bezorgen" linkje) */
-header a:nth-of-type(2) {
+header > a:nth-of-type(2) {
 	/* order: 1; */
 	color: var(	--white-text-and-box-color);
 	text-decoration: none;
@@ -282,29 +293,51 @@ header a:nth-of-type(2) {
 	padding-right: 1em;
 }
 
+/* MAIN */
+/* header weg maken */
+main > h1 {
+	display: none;
+}
+
 
 /* styling alle sections */
 section {
 	position: relative;
  	text-align: center;
-  	color: white;
+  	color: var(--white-text-and-box-color);
 	/* om section elementen onder de header te zetten */
 	z-index: -1;
+	/* Onder sections margin toe te voegen */
 }
 
 /* alle h1 en h2 titels in het sections */
 section h1, h2 {
 	font-family: 'chunkfive_printregular', 'sans-serif';
 }
+ 
+/* EERSTE SECTION */
 
-/* maakt allen img in de eerste section in het pagina */
-section:nth-of-type(1) img {
-	width: 100%;
+
+main .eerst-section {
 	background-repeat: no-repeat;
-    background-position: center;
+	background-size: cover!important;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
-section:nth-of-type(1) a {
+
+main .eerst-section img{
+	width: 100%;
+	max-width: 760px;
+	height: auto;
+}
+
+
+/* "lees meer" kismiyla alakali. responsive degil! */
+.eerst-section a {
 	
 	background-color: var(--white-text-and-box-color);
 	color: var(--text-and-footer-color);
@@ -312,34 +345,40 @@ section:nth-of-type(1) a {
 	padding-left: 2em;
 	padding-top: .75em;
 	padding-bottom: .75em;
+	width: 30%;
 	position: absolute;
-	top: 50%;
-	left: 70%;
+	bottom: 8%;
+
+
+	/* display: flex; */
+	/* flex-wrap: nowrap; */
 }
 
 /* media nodig */
 /* titel op de img te komen*/
-section:nth-of-type(1) h2 {
+.eerst-section h2 {
 	position: absolute;
-	top: 20%;
-	left: 80%;
-	transform: translate(-50%, -50%);
-
-}
-/* list elementen list decoration */
-li {
-	list-style: none;
+	bottom: 18%;
+	margin-bottom: 2em;
+	
 }
 
+/* TWEEDE SECTION */
 
 /* section met iconen deel start*/
-section:nth-of-type(2) {
+main section[aria-label="Onze producten, waarden & missie"] {
 	margin-bottom: 1em;
 	display: grid;
 	gap: 3em;
-	padding-bottom: 3em;
+	padding: 3em;
+	background-image: url(/images/background-section-2.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: auto;
 }
-section:nth-of-type(2) article{
+
+main section[aria-label="Onze producten, waarden & missie"] article{
 	width: 100%;
 	display: grid;
 	grid-template-columns: 2;
@@ -347,7 +386,7 @@ section:nth-of-type(2) article{
 	column-gap: 1em;
 }
 
-section:nth-of-type(2) article img {
+main section[aria-label="Onze producten, waarden & missie"] article img {
 	width: 6em;
 	grid-column-start: 1;
 	grid-row-start: 1;
@@ -356,23 +395,25 @@ section:nth-of-type(2) article img {
 	justify-self: end;
 }
 
-section:nth-of-type(2) article h2 {
+main section[aria-label="Onze producten, waarden & missie"] article h2 {
 	grid-column-start: 2;
 	grid-column-end: 3;
 	text-align: start;
 	margin: 0;
+	color: var(--text-and-footer-color);
 
 }
 
-section:nth-of-type(2) article p {
+main section[aria-label="Onze producten, waarden & missie"] article p {
 	text-align: start;
 	grid-column-start: 2;
 	grid-column-end: 3;
 	margin: 0;
 	padding: 0;
+	color: var(--text-and-footer-color);
 }
 
-section:nth-of-type(2) article a {
+main section[aria-label="Onze producten, waarden & missie"] article a {
 	grid-column-start: 2;
 	text-align: start;
 	font-size: 1.2em;
@@ -381,3 +422,75 @@ section:nth-of-type(2) article a {
 
 /* section met iconen deel end */
 
+/* DERDE SECTION */
+
+/* direct child of main gekozen */
+main > img {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	position: absolute;
+	
+}
+
+
+main > section:nth-of-type(3) {
+	padding:2em;
+	
+}
+
+main > section:nth-of-type(3) ul{
+	padding:2em;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+main > section:nth-of-type(3) li{
+	padding:2em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+
+}
+
+main > section:nth-of-type(3) h3 {
+	padding-top: 10em;
+	grid-column-start: 2;
+	grid-column-end: -1;
+	grid-row-start: 1;
+	grid-row-end: -1;
+	justify-self: center;
+	place-items: center;
+}
+
+main > section:nth-of-type(3) img {
+	grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: 1;
+	grid-column-end: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* TWEEDE PAGINA SPECIALE STYLINGEN */
+
+.second-page-sections ul li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.second-page-sections ul li h3{
+	
+}
