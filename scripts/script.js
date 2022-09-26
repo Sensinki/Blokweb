@@ -2,29 +2,18 @@
 console.log("hi");
 
 
-// Als ik deze aan doet, knop animatie lukt niet maar hamburger menu komt wel beneden
+// Hamburger menu
+// Navbar gaat naar beneden
 
 var hamburgerMenuButton = document.querySelector("header button");
+var hamburgerMenu = document.querySelector("header");
 
 
 hamburgerMenuButton.addEventListener("click", hamburgerMenuButtonKlik);
 
 
 function hamburgerMenuButtonKlik() {
-  
-    var hamburgerMenu = document.querySelector("header");
     hamburgerMenu.classList.toggle("menuOpen");
+    hamburgerMenuButton.classList.toggle("kruisje");
 }
 
-
-// Als ik deze aan doet, dan de knop animatie doet wel maar hamburger menu werkt niet.
-
-// var eersteStreepjesButton = document.querySelector("header button");
-
-// eersteStreepjesButton.addEventListener("click", eersteStreepjesButtonKlik);
-
-// function eersteStreepjesButtonKlik() {
-//     var hamburgerMenu = document.querySelector("header");
-//     hamburgerMenu.classList.toggle("menuOpen");
-
-// }

@@ -10,27 +10,10 @@
     font-style: normal;
 }
 
-/* HET LUKTE NIET !VRAAG! */
-@font-face {
-    font-family: "rm_typerighter";
-    src: url('/assets/fonts/RM-Typerighter-medium-Regular/rm_typerighter_medium.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-    /* The FontStruction “RM Typerighter medium”
-    (http://fontstruct.fontshop.com/fontstructions/show/253940) by Ray Meadows is
-    licensed under a Creative Commons Attribution No Derivatives license
-    (http://creativecommons.org/licenses/by-nd/3.0/).
-    “RM Typerighter medium” was originally cloned (copied) from the
-    FontStruction “RM Typerighter”
-    (http://fontstruct.fontshop.com/fontstructions/show/250901) by Ray Meadows,
-    which is licensed under a Creative Commons Attribution No Derivatives license
-    (http://creativecommons.org/licenses/by-nd/3.0/). */
-}
-
 /* Note voor mijzelf: Gebruik die twee als font in de pagina */
 /* font-family: 'proxima-nova', 'sans-serif'; */
 /* font-family: 'chunkfive_printregular', 'sans-serif'; */
-/* font-family: "rm_typerighter", "sans-serif"; */
+/* font-family: 'Annie Use Your Telescope', cursive; */
 
 
 
@@ -64,6 +47,27 @@ button, summary {
 	--website-background-color: linear-gradient(180deg, rgba(87,161,205,1) 0%, rgba(212,227,239,1) 100%);
 }
 
+/* https://css-tricks.com/dark-modes-with-css/ */
+/* @media screen and (prefers-color-scheme: dark) {
+    :root {
+        --text-and-footer-color:#FFFFFF;
+        --sticky-header-color: #003E55;
+
+        --light-blauw-color: rgb(215,233,249);
+        --laatbezorgen-knop-color: #00394e;
+        --white-text-and-box-color: #191919;
+
+        --icon-background-color: #FFB915;
+        --second-section-background-color: #191919;
+
+        --knop-color: #rgb(215,233,249);
+        --first-footer-deel-color: #112800;
+        --website-background-color: linear-gradient(180deg, rgb(18, 90, 132) 0%, rgb(121, 165, 201) 100%);
+
+    }
+    
+} */
+
 
 /*********************/
 /* ALLES INDIVIDUEEL */
@@ -95,11 +99,23 @@ main {
     position: relative;
 }
 
-/* Alle linken */
+/* LINKS */
 a {
 	color: var(	--white-text-and-box-color);
 	text-decoration: none;
+    appearance: none;
+    font-family: inherit;
 }
+
+/* hover voor alle linken */
+a:hover {
+	color: var(	--second-section-background-color);
+}
+
+a:active {
+
+}
+
 
 li {
     /* Om punten weg te halen */
@@ -109,6 +125,13 @@ li {
 h1 {
     display: none;
 }
+
+/* BUTTON */
+button {
+    appearance: none;
+    font-family: inherit;
+}
+
 
 
 /* HEADER */
@@ -144,11 +167,6 @@ header a {
 	font-family: 'proxima-nova', 'sans-serif';
 }
 
-/* hover voor alle linken */
-a:hover {
-	color: var(	--second-section-background-color);
-}
-
 /* "laat ben en jerry's..." tekst goede plek zetten START */
 header > p {
 	order:-2;
@@ -156,8 +174,8 @@ header > p {
 	color: var(--white-text-and-box-color);
 	width:100%;
 	margin: 0;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: .02em;
+	padding-bottom: .02em;
 	text-align: center;
 	font-family: 'proxima-nova', 'sans-serif';
 }
@@ -182,7 +200,7 @@ section {
     margin: 0;
     padding: 0;
 	/* om section elementen onder de header te zetten */
-	z-index: -1;
+	/* z-index: -1; */
 }
 
 /* alle h1 en h2 titels in het sections */
@@ -284,22 +302,23 @@ section h1, h2 {
     }
 
     header button span:nth-of-type(1) {
-        transform:translateY(.4em);
+        transform:translateY(-.4em);
     }
 
     header button span:nth-of-type(3) {
-        transform:translateY(-.4em);
+        transform:translateY(.4em);
     }
 /* animatie werkt niet !VRAAG! */
-    header button.menuOpen span:nth-of-type(1) {
+    header button.kruisje span:nth-of-type(1) {
         transform:rotate(45deg) scaleX(1.25);
     }
 
-    header button.menuOpen span:nth-of-type(2) {
-        transform: scaleX(0);
+    header button.kruisje span:nth-of-type(2) {
+       opacity: 0;
+        /* transform: scaleX(0); */
     }
 
-    header button.menuOpen span:nth-of-type(3) {
+    header button.kruisje span:nth-of-type(3) {
         transform:rotate(-45deg) scaleX(1.25);
     }
     /* hamburger menu knop styling END */
@@ -314,7 +333,7 @@ section h1, h2 {
         text-transform: uppercase;
         width: 7rem;
         text-align: center;
-        border-right: 2px solid var(--white-text-and-box-color);
+        border-right: .125em solid var(--white-text-and-box-color);
         padding-right: 1em;
     }
 
@@ -334,7 +353,7 @@ section h1, h2 {
         text-align: center;
         position: relative;
         margin: 0;
-        height: 85vh;
+        /* height: 85vh; */
     }
 
     /* Image's */
@@ -343,7 +362,7 @@ section h1, h2 {
         max-width: 770px;
         height: inherit;
         z-index: 1;
-        object-fit: cover;
+        /* https://css-tricks.com/almanac/properties/o/object-position/ */
         object-position: center top;
     }
 
@@ -357,9 +376,9 @@ section h1, h2 {
     .eerst-section h2 {
         /* positioneren binnen img element */
         position: absolute;
-        left: 20%;
-        right: 20%;
-        top: 70%;
+        left: 15%;
+        right: 15%;
+        top: 65%;
         z-index: 2;
 
         font-size: 2em;
@@ -452,15 +471,18 @@ section h1, h2 {
     /* DERDE SECTION */
 
     /* decoratie image START */
+    /* https://stackoverflow.com/questions/48474/how-do-i-position-one-image-on-top-of-another-in-html */
     .decoratie {
         position: relative;
         width: 100%;
         top: 0;
         right: 0;
+        overflow: hidden;
+
     }
 
     .decoratie img:nth-of-type(1) { 
-        width: 100%;
+        width: 150%;
         height: auto;
         margin: 0;
         position: relative;
@@ -469,7 +491,7 @@ section h1, h2 {
     }
 
     .decoratie img:nth-of-type(2) { 
-        width: 50%;
+        width: 70%;
         height: auto;
         margin: 0;
         float: right;
@@ -528,13 +550,9 @@ section h1, h2 {
 
     main > section:nth-of-type(4) li:hover {
         background-color: #FFB915;
-
-        padding: 1em;
-        margin: 1em;
     }
 
     main > section:nth-of-type(4) h3 {
-        color: var(--text-and-footer-color);
         grid-column-start: 2;
         grid-column-end: -1;
         grid-row-start: 1;
@@ -543,6 +561,14 @@ section h1, h2 {
         justify-self: center;
         align-self: center;
     }
+    main > section:nth-of-type(4) a {
+        color: var(--text-and-footer-color);
+    }
+
+    main > section:nth-of-type(4) a:hover {
+        color: var(--first-footer-deel-color);
+    }
+
 
     main > section:nth-of-type(4) img {
         grid-column-start: 1;
@@ -603,18 +629,23 @@ section h1, h2 {
         justify-content: center;
         align-items: center;
         
-        margin: 1em;
+        margin: .5em;
     }
 
     main > section:nth-of-type(5) h3{
         background-color: var(--white-text-and-box-color);
-        padding: 8px 32px 16px 32px;
-        width: 320px;
-        height: 5.5em;
+        padding: .5em 2em 1em 2em;
+
+        width: calc(20em - 3em); 
+        height: 6.5em;
     }
 
     main > section:nth-of-type(5) h3 a{
         color: var(--knop-color);
+    }
+
+    main > section:nth-of-type(5) h3 a:hover{
+        color: var(--sticky-header-color);
     }
 
 
@@ -690,14 +721,14 @@ section h1, h2 {
         background-color: var(--white-text-and-box-color);
         border: none;
         padding: .8em;
-        box-shadow: 0 2px 2px rgb(0 0 0 / 30%);    
+        box-shadow: 0 .125em .125em rgb(0 0 0 / 30%);    
     }
 
     footer section:nth-of-type(1) form input[type=submit] {
         background-color: var(--white-text-and-box-color);
         border: none;
         padding: .8em;
-        box-shadow: 0 2px 2px rgb(0 0 0 / 30%);    
+        box-shadow: 0 .125em .125em rgb(0 0 0 / 30%);    
     }
 
     
@@ -728,7 +759,7 @@ section h1, h2 {
     }
 
     section[aria-label="sociaal"] ul li {
-        padding-top: 2em;
+        padding-top: 3em;
         padding-bottom: 2em;
     }
     
@@ -742,27 +773,36 @@ section h1, h2 {
 
     /* DERDE SECTION IN FOOTER */
     footer section:nth-of-type(3) {
-        
-
-
-
         z-index: 10;
     }
 
     footer section:nth-of-type(3) ul {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
         flex-wrap: wrap;
         /* flex-flow: row wrap; */
         justify-content: flex-start;
 
         background-color: var(--text-and-footer-color);
-
+        padding: 1em;
     }
+
 
     footer section:nth-of-type(3) li {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        padding: .5em;
     }
+
+    footer section:nth-of-type(3) li a {
+        color: var(--white-text-and-box-color);
+        /* Niet de orginele font maar dit is wat ik kon vinden */
+        font-family: 'Annie Use Your Telescope', cursive;
+        letter-spacing: .05em;
+    }
+    
 
 
 
@@ -827,7 +867,7 @@ section h1, h2 {
             width: 10em;
         }
 
-            .eerst-section a {
+        .eerst-section a {
             background-color: var(--white-text-and-box-color);
             color: var(--text-and-footer-color);
             /* center text binnen a element */
