@@ -79,9 +79,10 @@ li {
 	list-style: none;
 }
 
-h3 {
+/* BUNU GECIRMEDIMM!!!!!! */
+/* h3 {
 	display: flex;
-}
+} */
 
 /* HEADER */
 
@@ -129,9 +130,9 @@ header.menuOpen nav {
 /* navbar end */
 
 
-
+/* @MEDIA NODIG DAHA GECIRMEDIM!!!!!!!!!!!! */
 /* logo start */
-header > a:nth-of-type(1) {
+/* header > a:nth-of-type(1) {
 	margin-right: auto;
 	order: -1;
 }
@@ -140,7 +141,7 @@ header > a:nth-of-type(1) img {
 	height: auto;
 	width: 30vw;
 	
-}
+} */
 /* logo end */
 
 /* media dingen start*/
@@ -317,8 +318,8 @@ section h1, h2 {
  
 /* EERSTE SECTION */
 
-
-main .eerst-section {
+/* BU KISMI GECIRMEDIM */
+/* main .eerst-section {
 	background-repeat: no-repeat;
 	background-size: cover!important;
 	position: relative;
@@ -326,7 +327,7 @@ main .eerst-section {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-}
+} */
 
 
 main .eerst-section img{
@@ -335,6 +336,9 @@ main .eerst-section img{
 	height: auto;
 }
 
+
+
+/* GECIRMEDIM MATIKLI DEGILDI */
 
 /* "lees meer" kismiyla alakali. responsive degil! */
 .eerst-section a {
@@ -435,34 +439,34 @@ main > img {
 
 
 main > section:nth-of-type(3) {
-	padding:2em;
+	padding: 2em;
 	
 }
 
 main > section:nth-of-type(3) ul{
-	padding:2em;
+	padding: 2em;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-
+	gap: 1em;
 }
 
 main > section:nth-of-type(3) li{
-	padding:2em;
+	padding: 1em;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;
-
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 15em;
+	gap: 1em;
+	background-color: var(--second-section-background-color);
+	border-radius: 2%;
 }
 
-main > section:nth-of-type(3) h3 {
+main > section:nth-child(3) ul li h3 {
 	padding-top: 10em;
 	grid-column-start: 2;
 	grid-column-end: -1;
 	grid-row-start: 1;
 	grid-row-end: -1;
-	justify-self: center;
-	place-items: center;
 }
 
 main > section:nth-of-type(3) img {
@@ -471,6 +475,40 @@ main > section:nth-of-type(3) img {
 	grid-row-start: 1;
 	grid-column-end: 2;
 }
+
+
+/* VIERDE SECTION */
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

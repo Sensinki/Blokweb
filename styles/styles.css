@@ -1,0 +1,873 @@
+/*****************/
+/* WEBSITE FONTS */
+/*****************/
+
+@font-face {
+    font-family: 'chunkfive_printregular';
+    src: url('/assets/fonts/Chunkfive/chunkfive_print_400-webfont.woff2') format('woff2'),
+         url('/assets/fonts/Chunkfive/chunkfive_print_400-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* HET LUKTE NIET !VRAAG! */
+@font-face {
+    font-family: "rm_typerighter";
+    src: url('/assets/fonts/RM-Typerighter-medium-Regular/rm_typerighter_medium.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    /* The FontStruction “RM Typerighter medium”
+    (http://fontstruct.fontshop.com/fontstructions/show/253940) by Ray Meadows is
+    licensed under a Creative Commons Attribution No Derivatives license
+    (http://creativecommons.org/licenses/by-nd/3.0/).
+    “RM Typerighter medium” was originally cloned (copied) from the
+    FontStruction “RM Typerighter”
+    (http://fontstruct.fontshop.com/fontstructions/show/250901) by Ray Meadows,
+    which is licensed under a Creative Commons Attribution No Derivatives license
+    (http://creativecommons.org/licenses/by-nd/3.0/). */
+}
+
+/* Note voor mijzelf: Gebruik die twee als font in de pagina */
+/* font-family: 'proxima-nova', 'sans-serif'; */
+/* font-family: 'chunkfive_printregular', 'sans-serif'; */
+/* font-family: "rm_typerighter", "sans-serif"; */
+
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+    box-sizing:border-box;  
+}
+  
+button, summary {
+      cursor: pointer;
+}
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* kleuren */
+	--text-and-footer-color:#191919;
+	--sticky-header-color: #003E55;
+	--light-blauw-color: rgb(215,233,249);
+	--laatbezorgen-knop-color: #2C2A29;
+	--white-text-and-box-color: #FFFFFF;
+	--icon-background-color: #FFB915;
+	--second-section-background-color: #D9E8F7;
+	--knop-color: #0475A1;
+	--first-footer-deel-color: #3A780E;
+	--website-background-color: linear-gradient(180deg, rgba(87,161,205,1) 0%, rgba(212,227,239,1) 100%);
+}
+
+
+/*********************/
+/* ALLES INDIVIDUEEL */
+/*********************/
+
+/* ALLES */
+
+* {
+    /* Font van alle elementen */
+	font-family: 'proxima-nova', 'sans-serif';
+    margin: 0;
+    padding: 0;
+}
+
+/* BODY */
+
+body {
+	color:var(--color-text);
+	background-image: var(--website-background-color);
+	background-repeat: no-repeat;
+	height: 100%;
+	margin:0;
+	/* position: relative; */
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Alle linken */
+a {
+	color: var(	--white-text-and-box-color);
+	text-decoration: none;
+}
+
+li {
+    /* Om punten weg te halen */
+    list-style: none;
+}
+
+h1 {
+    display: none;
+}
+
+
+/* HEADER */
+
+header {
+	/* background kleur */
+	background-color: var(--sticky-header-color);
+	/* om header sticky te maken */
+	position: sticky;
+	/* voor Safari */
+	position: -webkit-sticky; 
+	/* waar wil ik het stickky maken */
+	top: 0;
+
+	/* flex maken zodat de elementen naast elkaar nog beter kunnen staan */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+
+	/* elementen toestemming geven om een andere rij te staan */
+	/* hulp gekregen van Sanne */
+	flex-wrap: wrap;
+	
+	/* om header helemaal voor halen */
+	z-index: 11;
+}
+
+/* alle linken in header */
+header a {
+	color: var(	--white-text-and-box-color);
+	text-decoration: none;
+	font-family: 'proxima-nova', 'sans-serif';
+}
+
+/* hover voor alle linken */
+a:hover {
+	color: var(	--second-section-background-color);
+}
+
+/* "laat ben en jerry's..." tekst goede plek zetten START */
+header > p {
+	order:-2;
+	background-color: var(--laatbezorgen-knop-color);
+	color: var(--white-text-and-box-color);
+	width:100%;
+	margin: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-family: 'proxima-nova', 'sans-serif';
+}
+
+header > p a {
+	color: var(--color-text);
+}
+/* "laat ben en jerry's..." tekst goede plek zetten END */
+
+/* MAIN */
+
+/* header weg maken */
+main > h1 {
+	display: none;
+}
+
+/* styling alle sections */
+section {
+	position: relative;
+ 	text-align: center;
+  	color: var(--white-text-and-box-color);
+    margin: 0;
+    padding: 0;
+	/* om section elementen onder de header te zetten */
+	z-index: -1;
+}
+
+/* alle h1 en h2 titels in het sections */
+section h1, h2 {
+	font-family: 'chunkfive_printregular', 'sans-serif';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************/
+/* KLEIN EN MIDDEL SCHERM */
+/**************************/
+
+@media screen and (max-width: 770px) {
+	
+    /* HEADER */
+
+    /* Logo part START */
+	header > a:nth-of-type(1) {
+		margin-right:auto;
+        order: -1;
+	}
+	
+	header > a:nth-of-type(1) img {
+		height: auto;
+		width: 30vw;
+  	}
+    /* Logo part END */
+
+    /* hamburger menu inside styling START */
+    header nav ul li {
+        list-style: none;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    header nav ul li a {
+        font-family: 'chunkfive_printregular', 'sans-serif';
+        margin-bottom: 1em;
+        font-size: 1.5em;
+        flex-wrap: nowrap;
+        text-align: center;
+    }
+
+    header nav ul li:nth-of-type(1) a {
+        margin-top: 7em;
+    }
+    /* hamburger menu inside styling END */
+
+
+    /* hamburger menu knop styling START */
+
+    /* Om hamburger menu te openen */
+    /* Hulp gekregen van Sanne */
+    nav {
+        position: fixed;
+        inset: 0;
+        background-color: #FFB915;
+        transform: translateY(-100%);
+        transition: .5s;
+    }
+
+    header.menuOpen nav {
+        transform: translateY(0);
+    }
+    /* tot hier */
+
+    header button {
+        display:grid;
+        place-items:center;
+        background-color: transparent;
+        border: none;
+        width: 1.5em;
+        height: 1.5em;
+        position: relative;
+        margin-right: 1em;
+        order:2;
+        z-index: 100;
+    }
+
+    header button span {
+        /* position: absolute; */
+        width: 1.2em;
+        height: .2em;
+        background-color: var(--white-text-and-box-color);
+        grid-row-start:1;
+        grid-column-start:1; 
+        transition-duration: .5s;
+    }
+
+    header button span:nth-of-type(1) {
+        transform:translateY(.4em);
+    }
+
+    header button span:nth-of-type(3) {
+        transform:translateY(-.4em);
+    }
+/* animatie werkt niet !VRAAG! */
+    header button.menuOpen span:nth-of-type(1) {
+        transform:rotate(45deg) scaleX(1.25);
+    }
+
+    header button.menuOpen span:nth-of-type(2) {
+        transform: scaleX(0);
+    }
+
+    header button.menuOpen span:nth-of-type(3) {
+        transform:rotate(-45deg) scaleX(1.25);
+    }
+    /* hamburger menu knop styling END */
+
+    /* tweede child van het parent in het header ("nu bezorgen" linkje) START */
+    header > a:nth-of-type(2) {
+        /* order: 1; */
+        color: var(	--white-text-and-box-color);
+        text-decoration: none;
+        font-family: 'chunkfive_printregular', 'sans-serif';
+        font-weight: 400;
+        text-transform: uppercase;
+        width: 7rem;
+        text-align: center;
+        border-right: 2px solid var(--white-text-and-box-color);
+        padding-right: 1em;
+    }
+
+    header > a:nth-of-type(2):hover {
+        color: var(	--second-section-background-color);
+        /* hier mag nog meer beweging/animatie */
+    }
+    /* tweede child van het parent in het header ("nu bezorgen" linkje) END */
+
+
+
+    /* MAIN */
+
+    /* EERSTE SECTION */
+    .eerst-section {
+        background-repeat: no-repeat;
+        text-align: center;
+        position: relative;
+        margin: 0;
+        height: 85vh;
+    }
+
+    /* Image's */
+    .eerst-section img:nth-of-type(1){
+        width: 100%;
+        max-width: 770px;
+        height: inherit;
+        z-index: 1;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .eerst-section img:nth-of-type(2){
+        /* Om tweede foto weg te maken */
+        display: none;
+        z-index: 1;
+    }
+
+    /* Titel */
+    .eerst-section h2 {
+        /* positioneren binnen img element */
+        position: absolute;
+        left: 20%;
+        right: 20%;
+        top: 70%;
+        z-index: 2;
+
+        font-size: 2em;
+    }
+
+    /* P element */
+    .eerst-section p {
+        display: none;
+    }
+
+    /* "Lees meer"  knop */
+    .eerst-section a {
+        background-color: var(--white-text-and-box-color);
+	    color: var(--text-and-footer-color);
+        /* center text binnen a element */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* positioneren binnen img element */
+        position: absolute;
+        left: calc(50% - 4em);
+        right: calc(50% - 4em);
+        bottom: 3%;
+        /* top: 90%; */
+        z-index: 2;
+
+        width: 8em;
+        height: 3em;
+    }
+
+
+    /* TWEEDE SECTION */
+
+    /* section met iconen deel START */
+    main section[aria-label="Onze producten, waarden & missie"] {
+        display: grid;
+        gap: 3em;
+        padding: 3em;
+        padding-bottom: 4em;
+        background-image: url(/images/background-section-2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: auto;
+    }
+
+    main section[aria-label="Onze producten, waarden & missie"] article{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2;
+        grid-template-rows: 3;
+        column-gap: 1em;
+    }
+
+    main section[aria-label="Onze producten, waarden & missie"] article img {
+        width: 6em;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 2;
+        grid-row-end: span 3;
+        justify-self: end;
+    }
+
+    main section[aria-label="Onze producten, waarden & missie"] article h2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        text-align: start;
+        margin: 0;
+        color: var(--text-and-footer-color);
+    }
+
+    main section[aria-label="Onze producten, waarden & missie"] article p {
+        text-align: start;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        margin: 0;
+        padding: 0;
+        color: var(--text-and-footer-color);
+    }
+
+    main section[aria-label="Onze producten, waarden & missie"] article a {
+        grid-column-start: 2;
+        text-align: start;
+        font-size: 1.2em;
+        color: var(--knop-color);
+    }
+    /* section met iconen deel END */
+
+
+    /* DERDE SECTION */
+
+    /* decoratie image START */
+    .decoratie {
+        position: relative;
+        width: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    .decoratie img:nth-of-type(1) { 
+        width: 100%;
+        height: auto;
+        margin: 0;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+    .decoratie img:nth-of-type(2) { 
+        width: 50%;
+        height: auto;
+        margin: 0;
+        float: right;
+        position: absolute;
+        top: -1em;
+        right: 0;
+        padding-right: 1em;
+    }
+    /* decoratie image END */
+
+
+    /* VIERDE SECTION */
+
+    /* direct child of main gekozen */
+    main > section:nth-of-type(4) {
+        padding: 0;
+        margin: 0;
+    }
+
+    main > section:nth-of-type(4) ul{
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        gap: 1em;
+    }
+
+    main > section:nth-of-type(4) li{
+        padding: 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 18em;
+        gap: 1em;
+        background-color: var(--second-section-background-color);
+        border-radius: 2%;
+        position: relative;
+    }
+
+    main > section:nth-of-type(4) h2 {
+        padding: 1em;
+        font-size: 2em;
+    }
+
+    /* Om de gele lijn toe te voegen boven op h2 */
+    main > section:nth-of-type(4) h2::before {
+        content: " ";
+        display: block;
+        position: relative;
+        width: 4em;
+        border-top: .3em solid var(--icon-background-color);
+        left: calc(50% - 2em);
+        right: calc(50% - 2em);        
+        padding-top: 1em; 
+    }
+
+    main > section:nth-of-type(4) li:hover {
+        background-color: #FFB915;
+
+        padding: 1em;
+        margin: 1em;
+    }
+
+    main > section:nth-of-type(4) h3 {
+        color: var(--text-and-footer-color);
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 1;
+        grid-row-end: -1;
+        position: absolute; 
+        justify-self: center;
+        align-self: center;
+    }
+
+    main > section:nth-of-type(4) img {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-row-start: 1;
+        grid-column-end: 2;
+        width: 100%;
+        align-self: center;
+    }
+
+
+    /* VIJFDE SECTION */
+
+    main > section:nth-of-type(5) {
+        padding: 0;
+        margin: 0;
+        background-image: url(/images/vierde-section-background.png);
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;        
+        width: auto;
+        height: 100em;
+    }
+
+    main > section:nth-of-type(5) h2{
+        padding: 1em;
+        margin-top: 1em;
+        font-size: 2em;
+    }
+
+    /* Om de gele lijn toe te voegen boven op h2 */
+    main > section:nth-of-type(5) h2::before {
+        content: " ";
+        display: block;
+        position: relative;
+        width: 4em;
+        border-top: .3em solid var(--icon-background-color);
+        left: calc(50% - 2em);
+        right: calc(50% - 2em);        
+        padding-top: 1em; 
+    }
+
+    main > section:nth-of-type(5) ul{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        gap: 1em;
+    }
+
+    
+    main > section:nth-of-type(5) li{
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+        margin: 1em;
+    }
+
+    main > section:nth-of-type(5) h3{
+        background-color: var(--white-text-and-box-color);
+        padding: 8px 32px 16px 32px;
+        width: 320px;
+        height: 5.5em;
+    }
+
+    main > section:nth-of-type(5) h3 a{
+        color: var(--knop-color);
+    }
+
+
+    /* Om de gele lijn toe te voegen boven op h2 */
+    main > section:nth-of-type(5) h3::before {
+        content: " ";
+        display: block;
+        position: relative;
+        width: 4em;
+        border-top: .3em solid var(--icon-background-color);
+        left: calc(50% - 2em);
+        right: calc(50% - 2em);        
+        padding-top: 1em; 
+    }
+
+
+    main > section:nth-of-type(5) img{
+        width: 20em;
+        background-color: #FFB915;
+    }
+
+    
+
+
+
+    /* FOOTER */
+
+
+    footer {
+        background-color: var(--first-footer-deel-color);
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* EERSTE SECTION IN FOOTER */
+    footer section:nth-of-type(1) {
+        display: flex;
+        flex-direction: column;
+
+        /* position: absolute; */
+        right: calc(50% - 10em);
+        left: calc(50% - 10em);
+
+        padding: 0;
+        margin: 0;
+        width: 20em;
+
+        z-index: 10;
+    }
+
+    footer section:nth-of-type(1) h2 {
+        padding: 1em;
+        padding-top: 2em;
+    }
+
+    footer section:nth-of-type(1) p {
+        padding: .5em;
+    }
+
+    footer section:nth-of-type(1) form {
+        padding: .5em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer section:nth-of-type(1) form input[type=text] {
+        background-color: var(--white-text-and-box-color);
+        border: none;
+        padding: .8em;
+        box-shadow: 0 2px 2px rgb(0 0 0 / 30%);    
+    }
+
+    footer section:nth-of-type(1) form input[type=submit] {
+        background-color: var(--white-text-and-box-color);
+        border: none;
+        padding: .8em;
+        box-shadow: 0 2px 2px rgb(0 0 0 / 30%);    
+    }
+
+    
+
+
+
+    /* TWEEDE SECTION IN FOOTER */ 
+    section[aria-label="sociaal"] {
+        display: block;
+        justify-content: center;
+        /* position: absolute; */
+        right: calc(50% - 12em);
+        left: calc(50% - 10em);
+
+        padding: 0;
+        margin: 0;
+        width: 20em;
+
+        z-index: 10;
+    }
+
+    section[aria-label="sociaal"] ul {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 3em 3em 3em;
+        grid-template-rows: 1fr;
+        gap: 1em;
+    }
+
+    section[aria-label="sociaal"] ul li {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    
+
+    section[aria-label="sociaal"] img {
+        width: 3em;
+        height: auto;
+    }
+
+
+
+    /* DERDE SECTION IN FOOTER */
+    footer section:nth-of-type(3) {
+        
+
+
+
+        z-index: 10;
+    }
+
+    footer section:nth-of-type(3) ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* flex-flow: row wrap; */
+        justify-content: flex-start;
+
+        background-color: var(--text-and-footer-color);
+
+    }
+
+    footer section:nth-of-type(3) li {
+        display: block;
+    }
+
+
+
+
+
+
+
+    /* TWEEDE PAGINA SPECIALE STYLINGEN */
+
+    .second-page-sections ul li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* .second-page-sections ul li h3{ 
+
+    } */
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************/
+/* GROOT SCHERM */
+/****************/
+
+    @media screen and (min-width: 550.01px) {
+
+        header {
+            padding-bottom: 1em;
+        }
+        header > a:nth-of-type(1) {
+            margin-right:auto;
+            order: -1;
+        }
+
+        header > a:nth-of-type(1) img {
+            height: auto;
+            width: 10em;
+        }
+
+            .eerst-section a {
+            background-color: var(--white-text-and-box-color);
+            color: var(--text-and-footer-color);
+            /* center text binnen a element */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* positioneren binnen img element */
+            position: absolute;
+            left: calc(50% - 4em);
+            right: calc(50% - 4em);
+            bottom: calc(10% - 1em);
+            z-index: 2;
+
+            width: 8em;
+            height: 3em;
+        }
+
+        @media screen and (min-width: 770.01px) {
+
+            /* buyuk ekranda oldugumu anlamak icin */
+            main {
+                background-color: #ffb9153a;
+            }
+        
+            /* EERSTE SECTION */ 
+            .eerst-section {
+                background-repeat: no-repeat;
+            }
+        
+             /* Om eerste foto weg te maken */
+            .eerst-section img:nth-of-type(1) {
+               display: none;
+            }
+        
+            .eerst-section img:nth-of-type(2) {
+                width: 100%;
+                min-width: 770px;
+                height: auto;    
+            }
+        
+        }
+    }
+

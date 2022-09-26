@@ -9,7 +9,7 @@
 	
 	<title>Home | Ben & Jerry's</title>
 	
-	<link href="styles/style.css" rel="stylesheet">
+	<link href="styles/styles.css" rel="stylesheet">
 	<!-- icon op de pagina moet nog veranderen -->
 	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 	<link rel="stylesheet" href="https://use.typekit.net/hlx7huo.css">
@@ -51,7 +51,7 @@
 					<form action="">
 						<input type="search">
 						<button type="submit" aria-label="zoeken">
-							<img src="" alt="">
+							<!-- <img src="images/search.png" alt=""> -->
 						</button>
 					</form>
 				</li>
@@ -61,13 +61,17 @@
 
 	<main>
 		<h1>Ben & Jerry's</h1> 
+		<!-- Eerste section -->
 		<section class="eerst-section">
 			<h2>Nieuw: A Chocolatey Love-A-Fair</h2>
-			<img src="images/hoofd-foto.png" alt="A Chocolatey Love-A-Fair Ben & Jerry's doos">
+			<p>Geïnspireerd door onze vrienden bij Tony's Chocolonely, hebben we een ijssmaak gemaakt om te vieren dat we bij hun missie aansluiten; een missie om een einde te maken aan moderne slavernij in de cacaoteelt. </p>
 			<!-- maak a zoals een button -->
 			<a href="">Lees meer</a>
+			<img src="images/hoofd-foto.png" alt="A Chocolatey Love-A-Fair Ben & Jerry's doos">
+			<img src="images/groot-hoofd-foto.png" alt="A Chocolatey Love-A-Fair Ben & Jerry's doos">
 		</section>
 
+		<!-- Tweede section -->
 		<section aria-label="Onze producten, waarden & missie">
 			<article>
 				<h2>Bewuste ingredienten</h2>
@@ -91,17 +95,20 @@
 			</article>
 		</section>
 
-		<img src="images/background-ice.png" alt="Lekker ijsje in het bord"> 
-
+		<!-- Derde section -->
+		<section class="decoratie">
+			<img src="images/blue-pattern.png" alt=""> 
+			<img src="images/ijs-decoratie.png" alt="">
+		</section>
+		
+		<!-- Vierde section -->
 		<section>
 			<h2>Hoe wil jij graag je euforie?</h2>
-			
 			<p>Er zijn zoveel manieren om van Ben & Jerry's te genieten. En met al onze smaken, is er voor iedereen wat wils.</p>
 
-			
 			<ul>
 				<li>
-					<h3>Classics</h3>
+					<h3 class="hi">Classics</h3>
 					<img src="images/ijsjes/cookie-dough-landing.png" alt="Een soort van de classic ijsjes">
 				</li>
 	
@@ -128,31 +135,33 @@
 
 		</section>
 
+		<!-- Vijfde section -->
 		<!-- article moet betekenisvol zijn -->
 		<section>
 			<h2>Recent Highlights</h2>
 
-			<section>
-				<!-- met css omdraaien  flex-->
-				<h3><a href="">Vind ijs bij mijn buurt</a></h3>
-				<img src="images/Global_delivery.jpeg" alt="Frisse ijs doos">
-			</section>
-			<!-- doe hetzelfde alles naar beneden -->
+			<ul>
+				<li>
+					<!-- met css omdraaien  flex-->
+					<h3><a href="">Vind ijs bij mijn buurt</a></h3>
+					<img src="images/Global_delivery.jpeg" alt="Frisse ijs doos">
+				</li>
 
-			<section>
-				<h3><a href="">Caramel Brownie Movie Night met Pathé Thuis film cadeau!</a></h3>
-				<img src="images/NL_spotlight_caramel-brownie-movie-night.jpeg" alt="Movie night foto met een Ben & Jerry's ijs">
-			</section>
+				<li>
+					<h3><a href="">Caramel Brownie Movie Night met Pathé Thuis film cadeau!</a></h3>
+					<img src="images/NL_spotlight_caramel-brownie-movie-night.jpeg" alt="Movie night foto met een Ben & Jerry's ijs">
+				</li>
 
-			<section>
-				<h3><a href="">30yrs of Cookie Dough vieren wij met heel veel Dough!</a></h3>
-				<img src="images/GR_flavors.jpeg" alt="Cookie dough ijs doos">
-			</section>
+				<li>
+					<h3><a href="">30yrs of Cookie Dough vieren wij met heel veel Dough!</a></h3>
+					<img src="images/GR_flavors.jpeg" alt="Cookie dough ijs doos">
+				</li>
 
-			<section>
-				<h3><a href="">3400 brieven voor #SOSMoria. What's next, lees hier meer.</a></h3>
-				<img src="images/NL_spotlight_SOSMoriawhatnext.jpeg" alt="#SOSMoria brieven">
-			</section>
+				<li>
+					<h3><a href="">3400 brieven voor #SOSMoria. What's next, lees hier meer.</a></h3>
+					<img src="images/NL_spotlight_SOSMoriawhatnext.jpeg" alt="#SOSMoria brieven">
+				</li>
+			</ul>
 
 		</section>
 	</main>
@@ -165,20 +174,20 @@
 
 			<form action="">
 				<input type="text" placeholder="john.denvy@gmail.com">
-				<input type="submit">
+				<input type="submit" value="Meld je aan">
 			</form>
 
 		</section>
 
 		<section aria-label="sociaal">
 			<ul>
-				<li><a href=""><img src="" alt="facebook icoon"></a></li>
-				<li><a href=""><img src="" alt="twitter icoon"></a></li>
-				<li><a href=""><img src="" alt="instagram icoon"></a></li>
+				<li><a href=""><img src="images/facebook.svg" alt="facebook icoon"></a></li>
+				<li><a href=""><img src="images/twitter.svg" alt="twitter icoon"></a></li>
+				<li><a href=""><img src="images/instagram.svg" alt="instagram icoon"></a></li>
 			</ul>
 		</section>
 
-		<section aria-label="footer">
+		<section aria-label="website informatie">
 			<ul>
 				<li><a href="">Neem contact met ons</a></li>
 				<li><a href="">Press</a></li>
