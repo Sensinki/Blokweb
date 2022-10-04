@@ -700,6 +700,7 @@ main > button:focus {
 
 		margin-bottom: 3em;
 
+		margin: 2em;
 		overflow-x: scroll;
 		overflow-y: hidden;
 		
