@@ -49,7 +49,7 @@ button, summary {
     --yellow-transparent-color: #ffb915e1;
 	--link-color: #0475A1;
     --blue-link-color: var(--link-color);
-    --hover-link-color: #ffb300b6;
+    --hover-link-color: #FFB915;
 	--footer-green-color: #3A780E;
 	--website-background-color: linear-gradient(180deg, rgba(87,161,205,1) 0%, rgba(212,227,239,1) 100%);
 }
@@ -282,7 +282,7 @@ main > button:focus {
 /* KLEIN EN MIDDEL SCHERM */
 /**************************/
 
-@media (max-width: 770px) {
+@media (min-width: 1em) {
 	
     /* HEADER */
 
@@ -332,11 +332,13 @@ main > button:focus {
 
     header nav ul li:nth-of-type(6) form button{
         background-color: var(--white-titel-color);        
-        width: 3em;    
+        width: 3em;   
+        height: 2.25em; 
     }
 
     header nav ul li:nth-of-type(6) form input {
-
+        width: 10em;
+        height: 2.5em;
     }
 
     header nav ul li:nth-of-type(6) form button::after{
@@ -383,6 +385,7 @@ main > button:focus {
     header button:focus {
         background-color: var(--hover-link-color);
     }
+    
 
     header button span {
         /* position: absolute; */

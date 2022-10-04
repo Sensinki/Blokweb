@@ -74,7 +74,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
   - Ik kan de website responsive maken.
-  
+
   - Ik kan een uitleg over het product schrijven zodat gebruiker de product zou weten als het internet niet lekker is.
 
 
@@ -292,26 +292,64 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenreader
   Hier korte omschrijving (met indien nodig afbeeldingen)
+  + Titels werken goed
+
+  - Het leest binnen hamburger menu !
+  - 4de section linken werken niet goed
 
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  - Momenteel heb ik geen idee over binnen hamburger menu (vragen)
+    - Ik heb het gevraagd en Sanne zegt dat het nu niet nodig is. (na het vragen)
 
+  - Ik kan de <a> element binnen de <h3> element halen. (gemaakt)
 
   #### Muis en Toetsenbord 
   Hier korte omschrijving (met indien nodig afbeeldingen)
+  + Volgerde van HTML elementen goed te volgen
+  + Elementen zijn makkelijk klikbaar, alle linken werken goed
+
+
+  - Geen hover, active effect
+  - Paar woord fouten
+  - Tab (focus state) gaat door binnen hamburger menu
+  <img src="readme-images/IMG_4491.png" width="375px" alt="tab werkt niet binnen hamburger menu">
+
 
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  - Ik moet nog states toevoegen
+  - Woord fouten verbeteren
+  - Momenteel heb ik geen idee over binnen hamburger menu (vragen)
+    - Ik heb het gevraagd en Sanne zegt dat het nu niet nodig is. (na het vragen)
 
 
   #### Motoriek (shocks, elastiekjes)
   Hier korte omschrijving (met indien nodig afbeeldingen)
+  + Goed beneden kan scrollen (shocks)
+  + Makkelijk te toetsenbord te gebruiken (shocks)
+  + Button en linken zijn wel goed klikbaar (shocks)
+
+  - Soms wordt het moeilijk naar beneden te gaan. Maar het is niet de probleem van de website. Het is de probleem van computer
 
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  - Er is geen probleem over de website
 
 
   #### Visueel (brillen, contrast, kleurenblind, dark/light). 
   Hier korte omschrijving (met indien nodig afbeeldingen)
 
+  + Alleen bij blur is het moeilijk te lezen of de luis te vinden. Andere brillen lukken wel bij website
+  + Ik vond de kluerenblind modussen leuk qua kleuren. Tritanopia ziet heel schattig en blij eruit. 
+  
+  - Hover effect is niet te zien in achromatopsia modus
+  - Geen dark modus
+  - Blur/glare cataract modus is het moeilijk te lezen. Maar als de website nog groter maakt kun je ze wel lezen.
+
+
+
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+
+  - Ik moet de hover effect nog beter laten zien in achromatopsia modus
+  - Ik kan een dark modus toevoegen
 
 </details>
 
@@ -322,29 +360,31 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Voortgang 3 (week 4)
 
 <details>
-  <summary>uitwerken voor 3e voortgang</summary>
+  <summary>Uitwerken voor 3e voortgang</summary>
 
   ### Stand van zaken
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+
+  Deze keer was onze het nuttigste gesprek. Ik had nog een keer geen vragen over mijn website maar ik heb wel van anderen vragen ook geleerd. 
 
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
+  |  Laura      | Idelene          | Shanine    | Mila       | Donna      | Sena Nur (ik) |
   | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | 1 animatie in javascript doet het, de rest niet  | Object observer api werkt niet             | Hoe maak ik een tabel?    | Carrousel begint op helft van pagina (gefixed door Sjoerd)    | Mag hier een class?     | Blauw lijntje onder plaatje moest weg! (gefixed door Sanne)   |
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Ik heb geleerd dat ik de media query niet goed gebruik
+  - Website moet goed getest worden voor gesprek
+  - Do's en Don'ts nog een keer herhalen
+  - Goede weg van div gebruiken (ik heb de eerste div na dit gesprek geplaats en het werkte uiteindelijk lekker :) )
+  - Met wat zijn wij trots?
+
 
 </details>
 
@@ -358,19 +398,35 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>Uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/highlight1.png" width="375px" alt="hover p element">
+  <img src="readme-images/highlight2.png" width="375px" alt="cool hover effect in groot scherm">
+  <img src="readme-images/highlight3.png" width="375px" alt="handige hele pagina hamburger menu">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
+  + Ik heb bijna alle code zelf bedacht en geschrijven. Dat ben ik heel trots op. Ik ben bijna pro bij flex en grid
+  + Ik begrijp heel duidelijk hoe het structuur van een html document moet zijn. 
+  + Ik had moeite mee met sections of li's noemen in css. Maar nu kan ik heel makkelijk elementen uit html noemen.
+  + Ik begrijp het logica van javascript. Ik kan nu makkelijk een class toevoegen en in css met het class spelen. 
+  + Ik weet nu wat ik niet moet doen als ik een website aan het bouwen.
+  + Als je de code vanuit een andere plek gehaald, is bronnen noteren altijd nodig!
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+
+  <img src="readme-images/klein-voorbeeld.png" width="375px" alt="voorbeeld wat ik geleerd">
+  <img src="readme-images/darkmode.png" width="375px" alt="voorbeeld wat ik geleerd / darkmode">
+  <img src="readme-images/leuk.png" width="375px" alt="voorbeeld die ik leuk vind">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
+  - Enige ding die ik nog meer wil doen is javascript, helaas bij mij website is er niet zo veel dingen met javascript gemaakt. Dus ik heb minder javascript geschereven. 
+  - Hamburger menu bouwen vond ik moeilijk (Hulp gekregen van Sanne)
+  - Als ik klikt op hamburger menu, blijft het focus state hangen ?
+  - Font downloaden en plakken vond ik heel moeilijk (Hulp gekregen van student assistent)
+  - Ik heb de tweede pagina laatste dag begonnen daarom tweede pagina lukte niet zo goed. Maar absoluut ben ik trots wat ik binnen 8 uur heb ik gedaan in tweede pagina.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  <img src="readme-images/hamburger-menu.png" width="375px" alt="normale hamburger menu">
+  <img src="readme-images/hamburger-menu1.png" width="375px" alt="gekke hamburger menu">
+
 </details>
 
 
@@ -391,6 +447,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   5. https:css-trickscoma-complete-guide-to-css-media-queries/ (media queries)
   6. https://www.steckinsights.com/shorten-length-border-bottom-pure-css/ (geel lijn bovenop titels)
   7. https://codepen.io/shooft/pen/ZExqBxV (mini beweeg effect)
+  8. https://cloudconvert.com/heic-to-png (om foto's converten)
+  9. https://css-tricks.com/solved-with-css-dropdown-menus/ (bij tweede pagina maar ik had helaas geen tijd om toe te voegen)
+  10. https://www.benjerry.nl/smaken/pints (alle fotos)
+  11. https://www.benjerry.nl/ (alle fotos)
+  12. https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items (meer voorbeelden te kijken)
+  13. https://codepen.io/shooft/pen/yLKjzWa (geen tijd :\ )
 
 
 </details>
