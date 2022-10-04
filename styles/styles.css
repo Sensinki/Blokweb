@@ -46,22 +46,52 @@ button, summary {
     --box-button-color: #FFFFFF;
     --form-color:#FFFFFF;
 	--yellow-color: #FFB915;
+    --yellow-transparent-color: #ffb915e1;
 	--link-color: #0475A1;
+    --blue-link-color: var(--link-color);
     --hover-link-color: #ffb300b6;
 	--footer-green-color: #3A780E;
 	--website-background-color: linear-gradient(180deg, rgba(87,161,205,1) 0%, rgba(212,227,239,1) 100%);
 }
 
 /* https://css-tricks.com/dark-modes-with-css/ */
-@media screen and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
-        
+        --titel-black-color:#000000;
+        --p-black-color:#ffffff;
+        --footer-black-color:#191919;
+        --laatbezorgen-text-white-color: var(--white-text-color);
+        --sticky-header-blue-color: #003E55;
+        --laatbezorgen-knop-black-color: #2C2A29;
+        --white-titel-color: #FFFFFF;
+        --white-text-color: #FFFFFF;
+        --box-button-color: #005473;
+        --tweede-box-color: #003245;
+        --form-color:#FFFFFF;
+        --yellow-color: #FFB915;
+        --yellow-transparent-color: #ffb915e1;
+        --link-color: #f8f8f8;
+        --hover-link-color: #ffb300ef;
+        --footer-green-color: #275d00;
+        --blue-link-color: var(--box-button-color);
 
-        --website-background-color: linear-gradient(180deg, rgb(18, 90, 132) 0%, rgb(121, 165, 201) 100%);
+        --website-background-color: linear-gradient(180deg, rgb(197, 216, 231) 0%, rgb(95, 139, 164) 100%);
 
     }
+
+    main section:nth-of-type(2) {
+        filter: brightness(80%);
+    }
+
+    main section:nth-of-type(5) {
+        filter: brightness(90%);
+    }
     
-}
+    main > section:nth-of-type(5) {
+        filter: brightness(80%);
+    }
+
+}    
 
 :focus {
     background-color: var(--yellow-color);
@@ -186,10 +216,16 @@ header > p a {
 
 /* MAIN */
 
-/* header weg maken */
-main > h1 {
-	display: none;
-}
+/* H1 weg maken */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
 
 /* styling alle sections */
 section {
@@ -204,6 +240,27 @@ section {
 /* alle h1 en h2 titels in het sections */
 section h1, h2 {
 	font-family: 'chunkfive_printregular', 'sans-serif';
+}
+
+/* COOKIE-INSTELLINGEN */
+main > button {
+    background-image: url(/images/oneTrustLogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
+    z-index: 100000;
+    border: none;
+    min-height: 4em;
+    min-width: 4em;
+
+    position: fixed;
+    bottom: 3em;
+    left: 1.5%;
+}
+
+main > button:focus {
+    background-color: transparent;
 }
 
 
@@ -221,7 +278,7 @@ section h1, h2 {
 /* KLEIN EN MIDDEL SCHERM */
 /**************************/
 
-@media screen and (max-width: 770px) {
+@media (max-width: 770px) {
 	
     /* HEADER */
 
@@ -251,11 +308,42 @@ section h1, h2 {
         font-size: 1.5em;
         flex-wrap: nowrap;
         text-align: center;
+        color: var(--white-titel-color);
     }
 
     header nav ul li:nth-of-type(1) a {
         margin-top: 7em;
     }
+
+
+    header nav ul li:nth-of-type(6) form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1em;
+    }
+
+
+    header nav ul li:nth-of-type(6) form button{
+        background-color: var(--white-titel-color);        
+        width: 3em;    
+    }
+
+    header nav ul li:nth-of-type(6) form input {
+        
+    }
+
+    header nav ul li:nth-of-type(6) form button::after{
+        content: "Zoek";
+    }
+
+    header nav ul li:nth-of-type(6) form button:hover{
+        background-color: var(--yellow-color);
+    }
+
+
+
     /* hamburger menu inside styling END */
 
 
@@ -266,7 +354,7 @@ section h1, h2 {
     nav {
         position: fixed;
         inset: 0;
-        background-color: var(--yellow-color);
+        background-color: var(--blue-link-color);
         transform: translateY(-100%);
         transition: .5s;
     }
@@ -277,7 +365,7 @@ section h1, h2 {
     /* tot hier */
 
     header button {
-        display:grid;
+        display: grid;
         place-items:center;
         background-color: transparent;
         border: none;
@@ -287,6 +375,10 @@ section h1, h2 {
         margin-right: 1em;
         order:2;
         z-index: 100;
+    }
+
+    header button:focus {
+        background-color: var(--hover-link-color);
     }
 
     header button span {
@@ -345,6 +437,7 @@ section h1, h2 {
 
     /* MAIN */
 
+
     /* EERSTE SECTION */
     .eerst-section {
         background-repeat: no-repeat;
@@ -361,6 +454,7 @@ section h1, h2 {
         z-index: 1;
         /* https://css-tricks.com/almanac/properties/o/object-position/ */
         object-position: center top;
+        display: block;
     }
 
     .eerst-section img:nth-of-type(2){
@@ -369,14 +463,25 @@ section h1, h2 {
         z-index: 1;
     }
 
-    /* Titel */
-    .eerst-section h2 {
-        /* positioneren binnen img element */
+    .eerst-section div {
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        gap: 1.5em;
+
         position: absolute;
         left: 15%;
         right: 15%;
-        top: 65%;
+        bottom: 10%;
         z-index: 2;
+
+    }
+
+    /* Titel */
+    .eerst-section h2 {
+        /* positioneren binnen img element */
+       
 
         font-size: 2em;
         color: var(--white-titel-color);
@@ -397,9 +502,7 @@ section h1, h2 {
         justify-content: center;
         align-items: center;
         /* positioneren binnen img element */
-        position: absolute;
-        left: calc(50% - 6em);
-        right: calc(50% - 6em);
+       
         bottom: 3%;
         /* top: 90%; */
         z-index: 2;
@@ -412,6 +515,7 @@ section h1, h2 {
     .eerst-section a:hover {
         background-color: var(--hover-link-color);
     }
+
     .eerst-section a:focus {
         background-color: var(--yellow-color);
         color: var(--white-text-color);
@@ -471,7 +575,7 @@ section h1, h2 {
         grid-column-start: 2;
         text-align: start;
         font-size: 1.2em;
-        color: var(--link-color);
+        color: var(--blue-link-color);
     }
         
     main section[aria-label="Onze producten, waarden & missie"] article a:hover {
@@ -484,16 +588,16 @@ section h1, h2 {
 
     /* decoratie image START */
     /* https://stackoverflow.com/questions/48474/how-do-i-position-one-image-on-top-of-another-in-html */
-    .decoratie {
+    section:nth-of-type(3) {
         position: relative;
+        overflow-x: hidden;
         width: 100%;
         top: 0;
         right: 0;
-        overflow: hidden;
-
+        padding-bottom: 3em;
     }
 
-    .decoratie img:nth-of-type(1) { 
+    section:nth-of-type(3) img:nth-of-type(1) { 
         width: 150%;
         height: auto;
         margin: 0;
@@ -502,13 +606,13 @@ section h1, h2 {
         right: 0;
     }
 
-    .decoratie img:nth-of-type(2) { 
-        width: 70%;
+    section:nth-of-type(3) img:nth-of-type(2) { 
+        width: 65%;
         height: auto;
         margin: 0;
         float: right;
         position: absolute;
-        top: -1em;
+        top: 0;
         right: 0;
         padding-right: 1em;
     }
@@ -535,16 +639,18 @@ section h1, h2 {
     main > section:nth-of-type(4) li{
         padding: 1em;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 14em 1fr;
         grid-template-rows: 18em;
         gap: 1em;
         background-color: var(--box-button-color);
         border-radius: 2%;
         position: relative;
+        width: 30em;
     }
 
     main > section:nth-of-type(4) h2 {
         padding: 1em;
+        padding-top: 0;
         font-size: 2em;
     }
 
@@ -562,8 +668,9 @@ section h1, h2 {
 
     main > section:nth-of-type(4) p {
         font-size: 1.2em;
-        margin-bottom: 1em;
-    }
+        margin: 2em;
+        margin-top: 1em;
+        }
 
     main > section:nth-of-type(4) h3 {
         grid-column-start: 2;
@@ -576,7 +683,7 @@ section h1, h2 {
     }
 
     main > section:nth-of-type(4) a {
-        color: var(--titel-black-color);
+        color: var(--p-black-color);
     }
 
     main > section:nth-of-type(4) a:hover {
@@ -591,7 +698,87 @@ section h1, h2 {
         grid-column-end: 2;
         width: 100%;
         align-self: center;
+        justify-self: center;
     }
+
+    /* Vierde section eerste li element hover */
+    main > section:nth-of-type(4) li:nth-of-type(1) img {
+        transition: 1s;
+    }
+
+
+    main > section:nth-of-type(4) li:nth-of-type(1):hover img {
+        width: 110%;
+        transition-timing-function: ease-in-out;
+        transition-duration: .25s;
+        transition: 1s;
+        align-self: center;
+    }
+
+    /* Vierde section tweede li element hover */
+    main > section:nth-of-type(4) li:nth-of-type(2) img {
+        transition: 1s;
+    }
+
+
+    main > section:nth-of-type(4) li:nth-of-type(2):hover img {
+        width: 110%;
+        transition-timing-function: ease-in-out;
+        transition-duration: .25s;
+        transition: 1s;
+        align-self: center;
+    }
+
+    /* Vierde section derde li element hover */
+    main > section:nth-of-type(4) li:nth-of-type(3) img {
+        transition: 1s;
+    }
+
+
+    main > section:nth-of-type(4) li:nth-of-type(3):hover img {
+        width: 110%;
+        transition-timing-function: ease-in-out;
+        transition-duration: .25s;
+        transition: 1s;
+        align-self: center;
+    }
+
+    /* Vierde section vierde li element hover */
+    main > section:nth-of-type(4) li:nth-of-type(4) img {
+        transition: 1s;
+    }
+
+
+    main > section:nth-of-type(4) li:nth-of-type(4):hover img {
+        width: 110%;
+        transition-timing-function: ease-in-out;
+        transition-duration: .25s;
+        transition: 1s;
+        align-self: center;
+    }
+
+
+    /* Vierde section vijfde li element hover */
+    main > section:nth-of-type(4) li:nth-of-type(5) img {
+        transition: 1s;
+    }
+
+
+    main > section:nth-of-type(4) li:nth-of-type(5):hover img {
+        width: 110%;
+        transition-timing-function: ease-in-out;
+        transition-duration: .25s;
+        transition: 1s;
+        align-self: center;
+    }
+
+
+
+    
+
+
+
+
 
 
     /* VIJFDE SECTION */
@@ -600,6 +787,7 @@ section h1, h2 {
         padding: 0;
         margin: 0;
         background-image: url(/images/vierde-section-background.png);
+        filter: brightness(80%);
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -647,7 +835,7 @@ section h1, h2 {
     }
 
     main > section:nth-of-type(5) h3{
-        background-color: var(--box-button-color);
+        background-color: var(--tweede-box-color);
         padding: .5em 2em 1em 2em;
 
         width: calc(20em - 3em); 
@@ -659,7 +847,7 @@ section h1, h2 {
     }
 
     main > section:nth-of-type(5) h3 a:hover{
-        color: var(--sticky-header-blue-color);
+        color: var(--hover-link-color);
     }
 
 
@@ -737,9 +925,16 @@ section h1, h2 {
 
     footer section:nth-of-type(1) form input[type=text] {
         background-color: var(--form-color);
+        color: var(--footer-black-color);
         border: none;
         padding: .8em;
         box-shadow: 0 .125em .125em rgb(0 0 0 / 30%);    
+    }
+
+    footer section:nth-of-type(1) form input[type=text]:focus {
+        outline-style: outset;
+        outline-width: .5em;
+        outline-color: var(--yellow-color);
     }
 
     footer section:nth-of-type(1) form input[type=submit] {
@@ -755,6 +950,7 @@ section h1, h2 {
 
     footer section:nth-of-type(1) form input[type=submit]:focus {
         background-color: var(--yellow-color);
+        color: var(--white-text-color);
     }
 
     
@@ -795,7 +991,7 @@ section h1, h2 {
     }
 
     section[aria-label="sociaal"] img:hover {
-        border: solid .175em #FFB915;
+        border: solid .175em var(--yellow-color);
         border-radius: 100%;
         border-style: outset;
     }
@@ -806,6 +1002,8 @@ section h1, h2 {
     /* DERDE SECTION IN FOOTER */
     footer section:nth-of-type(3) {
         z-index: 10;
+        padding: 0;
+        margin: 0;
     }
 
     footer section:nth-of-type(3) ul {
@@ -864,31 +1062,14 @@ section h1, h2 {
 
 
 
+    /*****************/
+    /* MIDDEL SCHERM */
+    /*****************/
 
 
+    @media (min-width: 35em) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/****************/
-/* GROOT SCHERM */
-/****************/
-
-    @media screen and (min-width: 550.01px) {
-
+        /* Logo START */
         header {
             padding-bottom: 1em;
         }
@@ -901,40 +1082,137 @@ section h1, h2 {
             height: auto;
             width: 10em;
         }
+        /* Logo END */
 
-        .eerst-section a {
-            /* background-color: var(--box-color); */
-            /* color: var(--text-color); */
-            /* center text binnen a element */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* positioneren binnen img element */
-            position: absolute;
-            left: calc(50% - 4em);
-            right: calc(50% - 4em);
-            bottom: calc(10% - 1em);
-            z-index: 2;
 
-            width: 8em;
-            height: 3em;
-        }
 
-        @media screen and (min-width: 770.01px) {
+        @media (min-width: 48em) {
+
+
+            /* HEADER */
+
+
+            /* hamburger menu inside styling START */
+            header nav ul li {
+                list-style: none;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            header nav ul li a {
+                font-family: 'chunkfive_printregular', 'sans-serif';
+                color: var(--white-titel-color);
+
+                margin-bottom: 1em;
+                font-size: 1.5em;
+                flex-wrap: nowrap;
+                text-align: center;
+            }
+
+            header nav ul li:nth-of-type(1) a {
+                margin-top: 7em;
+            }
+            /* hamburger menu inside styling END */
+
+
+            /* hamburger menu knop styling START */
+
+            /* Om hamburger menu te openen */
+            /* Hulp gekregen van Sanne */
+            nav {
+                position: fixed;
+                inset: 0;
+                background-color: var(--yellow-transparent-color);
+                transform: translateY(-100%);
+                transition: .5s;
+            }
+
+            header.menuOpen nav {
+                transform: translateY(0);
+            }
+            /* tot hier */
+
+            header button {
+                display:grid;
+                place-items:center;
+                background-color: transparent;
+                border: none;
+                width: 1.5em;
+                height: 1.5em;
+                position: relative;
+                margin-right: 2em;
+                order:2;
+                z-index: 100;
+            }
+
+            header button span {
+                /* position: absolute; */
+                width: 1.2em;
+                height: .2em;
+                background-color: var(--white-text-color);
+                grid-row-start:1;
+                grid-column-start:1; 
+                transition-duration: .5s;
+            }
+
+            header button span:nth-of-type(1) {
+                transform:translateY(-.4em);
+            }
+
+            header button span:nth-of-type(3) {
+                transform:translateY(.4em);
+            }
+
+            header button.kruisje span:nth-of-type(1) {
+                transform:rotate(45deg) scaleX(1.25);
+            }
+
+            header button.kruisje span:nth-of-type(2) {
+            opacity: 0;
+                /* transform: scaleX(0); */
+            }
+
+            header button.kruisje span:nth-of-type(3) {
+                transform:rotate(-45deg) scaleX(1.25);
+            }
+            /* hamburger menu knop styling END */
+
+            /* tweede child van het parent in het header ("nu bezorgen" linkje) START */
+            header > a:nth-of-type(2) {
+                /* order: 1; */
+                color: var(	--white-text-color);
+                text-decoration: none;
+                font-family: 'chunkfive_printregular', 'sans-serif';
+                font-weight: 400;
+                font-size: 1.1em;
+                text-transform: uppercase;
+                width: 10em;
+                text-align: center;
+                border-right: .125em solid var(--white-text-color);
+                padding-right: 1em;
+            }
+
+            header > a:nth-of-type(2):hover {
+                color: var(--yellow-color);
+                /* hier mag nog meer beweging/animatie */
+            }
+            /* tweede child van het parent in het header ("nu bezorgen" linkje) END */
+
+            
+
+
+
+
 
 
             /* MAIN */
 
 
-            /* buyuk ekranda oldugumu anlamak icin */
-            main {
-                background-color: #ffb9153a;
-            }
         
             /* EERSTE SECTION */ 
-            .eerst-section {
-                background-repeat: no-repeat;
-            }
+            
+            
         
              /* Om eerste foto weg te maken */
             .eerst-section img:nth-of-type(1) {
@@ -944,8 +1222,347 @@ section h1, h2 {
             .eerst-section img:nth-of-type(2) {
                 width: 100%;
                 min-width: 770px;
-                height: auto;    
+                height: 100%;    
+                display: block;
             }
+
+            .eerst-section {
+                background-repeat: no-repeat;
+                text-align: center;
+                position: relative;
+                margin: 0;
+            }
+
+            .eerst-section div {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 10;
+                align-items: flex-end;
+                gap: 1.5em;
+                position: absolute;
+                right: 5%;
+                top: 10%;
+                z-index: 2;
+
+            }
+
+            .eerst-section h2 {
+                
+                font-size: 2.5em;
+                text-align: end;
+                color: var(--white-titel-color);
+
+                display: flex;
+                justify-content: flex-end;
+                align-self: flex-end;
+
+
+                width: 13em;
+            }
+
+            .eerst-section p {
+                
+                width: 20em;
+                text-align: end;
+                color: var(--white-text-color);
+                /* nasil oldugunu sor unutma */
+                text-shadow: #2C2A29;
+
+                display: flex;
+                justify-content: flex-end;
+                align-self: flex-end;
+                font-size: 1em;
+            }
+
+            .eerst-section a {
+                background-color: var(--box-button-color);
+                color: var(--p-black-color);
+                /* center text binnen a element */
+                display: grid;
+                align-items: center;
+                align-content: center;
+                /* positioneren binnen img element */
+                
+                width: 12em;
+                height: 3em;
+            }
+
+            .eerst-section a:hover {
+                background-color: var(--hover-link-color);
+            }
+            
+            .eerst-section a:focus {
+                background-color: var(--yellow-color);
+                color: var(--white-text-color);
+            }
+
+
+
+            /* TWEEDE SECTION */
+
+            /* section met iconen deel START */
+            main section[aria-label="Onze producten, waarden & missie"] {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+
+                gap: 2em;
+                padding: 1em;
+                padding-top: 3em;
+                padding-bottom: 4em;
+                background-image: url(/images/background-section-2.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                height: auto;
+            }
+
+            main section[aria-label="Onze producten, waarden & missie"] article{
+                display: grid;
+                grid-template-rows: 7em 3.5em 6.5em 3.5em;
+                align-items: center;
+                justify-self: center;
+            }
+
+            main section[aria-label="Onze producten, waarden & missie"] article img {
+                width: 6em;
+                grid-column-start: 1;
+                grid-row-start: 1;
+                grid-column-end: -1;
+                grid-row-end: 2;
+                justify-self: center;
+                align-self: flex-start;
+            }
+
+            main section[aria-label="Onze producten, waarden & missie"] article h2 {
+                grid-column-start: 1;
+                grid-column-end: -1;
+                text-align: center;
+                margin: 0;
+                color: var(--titel-black-color);
+                align-self: flex-start;
+            }
+
+            main section[aria-label="Onze producten, waarden & missie"] article p {
+                text-align: center;
+                grid-column-start: 1;
+                grid-column-end: -1;
+                margin: 0;
+                padding: 0;
+                color: var(--titel-black-color);
+                align-self: flex-start;
+            }
+
+            main section[aria-label="Onze producten, waarden & missie"] article a {
+                grid-column-start: 1;
+                grid-column-end: -1;
+                text-align: center;
+                font-size: 1.2em;
+                color: var(--blue-link-color);
+                align-self: flex-start;
+            }
+                
+            main section[aria-label="Onze producten, waarden & missie"] article a:hover {
+                color: var(--yellow-color);    
+            }
+            /* section met iconen deel END */
+    
+        
+            /* DERDE SECTION */
+
+            main section:nth-of-type(3) {
+                width: 100%;
+                height: auto;
+
+                margin: 0;
+                padding: 0;
+                padding-bottom: 3em;
+
+                position: relative;
+                
+            }
+
+            main section:nth-of-type(3) img:nth-of-type(1) {
+                width: 100%;
+                height: auto;
+                display: block;
+
+                position: relative;
+
+            }
+
+            main section:nth-of-type(3) img:nth-of-type(2) {
+                width: 45%;
+                height: auto;
+
+                position: absolute;
+                float: right;
+                z-index: 10;
+                top: -1em;
+                
+            }
+        
+
+            /* VIERDE SECTION */
+
+            /* direct child of main gekozen */
+            main > section:nth-of-type(4) {
+                padding: 0;
+                margin: 0;
+            }
+
+            main > section:nth-of-type(4) ul{
+                padding: 1em;
+                padding-bottom: 1em;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100vw;
+                gap: 1em;
+            }
+
+            main > section:nth-of-type(4) li{
+                padding: 1em;
+                display: grid;
+                grid-template-columns: 18em;
+                grid-template-rows: 3fr 1fr;
+                gap: 1em;
+                background-color: var(--box-button-color);
+                border-radius: 2%;
+                position: relative;
+            }
+
+            main > section:nth-of-type(4) h2 {
+                padding: 1em;
+                padding-top: 0;
+                font-size: 2em;
+            }
+
+            /* Om de gele lijn toe te voegen boven op h2 */
+            main > section:nth-of-type(4) h2::before {
+                content: " ";
+                display: block;
+                position: relative;
+                width: 4em;
+                border-top: .3em solid var(--yellow-color);
+                left: calc(50% - 2em);
+                right: calc(50% - 2em);        
+                padding-top: 1em; 
+            }
+
+            main > section:nth-of-type(4) p {
+                font-size: 1.2em;
+                margin: 2em;
+                margin-top: 1em;
+            }
+
+            main > section:nth-of-type(4) h3 {
+                grid-column-start: 1;
+                grid-column-end: -1;
+                grid-row-start: 2;
+                grid-row-end: -1;
+                position: absolute; 
+                justify-self: center;
+                align-self: center;
+            }
+
+            main > section:nth-of-type(4) a {
+                color: var(--p-black-color);
+            }
+
+            main > section:nth-of-type(4) a:hover {
+                color: var(--yellow-color);
+            }
+
+
+            main > section:nth-of-type(4) img {
+                grid-column-start: 1;
+                grid-column-end: -1;
+                grid-row-start: 1;
+                grid-column-end: 2;
+                width: 60%;
+                align-self: center;
+                justify-self: center;
+
+                transition: 1s;
+            }
+
+            /* Vierde section eerste li element hover */
+            /* main > section:nth-of-type(4) li:nth-of-type(1) img {
+                transition: 1s;
+            } */
+
+
+            main > section:nth-of-type(4) li:nth-of-type(1):hover img {
+                width: 110%;
+                transition-timing-function: ease-in-out;
+                transition-duration: .25s;
+                transition: 1s;
+                align-self: center;
+            }
+
+            /* Vierde section tweede li element hover */
+            main > section:nth-of-type(4) li:nth-of-type(2) img {
+                transition: 1s;
+            }
+
+
+            main > section:nth-of-type(4) li:nth-of-type(2):hover img {
+                width: 110%;
+                transition-timing-function: ease-in-out;
+                transition-duration: .25s;
+                transition: 1s;
+                align-self: center;
+            }
+
+            /* Vierde section derde li element hover */
+            main > section:nth-of-type(4) li:nth-of-type(3) img {
+                transition: 1s;
+            }
+
+
+            main > section:nth-of-type(4) li:nth-of-type(3):hover img {
+                width: 110%;
+                transition-timing-function: ease-in-out;
+                transition-duration: .25s;
+                transition: 1s;
+                align-self: center;
+            }
+
+            /* Vierde section vierde li element hover */
+            main > section:nth-of-type(4) li:nth-of-type(4) img {
+                transition: 1s;
+            }
+
+
+            main > section:nth-of-type(4) li:nth-of-type(4):hover img {
+                width: 110%;
+                transition-timing-function: ease-in-out;
+                transition-duration: .25s;
+                transition: 1s;
+                align-self: center;
+            }
+
+
+            /* Vierde section vijfde li element hover */
+            main > section:nth-of-type(4) li:nth-of-type(5) img {
+                transition: 1s;
+            }
+
+
+            main > section:nth-of-type(4) li:nth-of-type(5):hover img {
+                width: 110%;
+                transition-timing-function: ease-in-out;
+                transition-duration: .25s;
+                transition: 1s;
+                align-self: center;
+            }
+
+
+
 
 
 
@@ -956,12 +1573,10 @@ section h1, h2 {
                 margin: 0;
                 background-image: url(/images/vierde-section-background.png);
                 background-repeat: no-repeat;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;        
-                width: auto;
-                height: 100em;
+                background-size: cover;
+                -webkit-background-size: cover;      
+                width: 100%;
+                height: 60em;
             }
 
             main > section:nth-of-type(5) h2{
@@ -976,7 +1591,7 @@ section h1, h2 {
                 display: block;
                 position: relative;
                 width: 4em;
-                /* border-top: .3em solid var(--icon-background-color); */
+                border-top: .3em solid var(--yellow-color);
                 left: calc(50% - 2em);
                 right: calc(50% - 2em);        
                 padding-top: 1em; 
@@ -1005,7 +1620,7 @@ section h1, h2 {
             }
 
             main > section:nth-of-type(5) h3{
-                /* background-color: var(--white-text-color); */
+                background-color: var(--tweede-box-color);
                 padding: .5em 2em 1em 2em;
 
                 width: calc(20em - 3em); 
@@ -1013,11 +1628,11 @@ section h1, h2 {
             }
 
             main > section:nth-of-type(5) h3 a{
-                /* color: var(--knop-color); */
+                color: var(--link-color);
             }
 
             main > section:nth-of-type(5) h3 a:hover{
-                /* color: var(--sticky-header-color); */
+                color: var(--sticky-header-blue-color);
             }
 
 
@@ -1027,7 +1642,7 @@ section h1, h2 {
                 display: block;
                 position: relative;
                 width: 4em;
-                /* border-top: .3em solid var(--icon-background-color); */
+                border-top: .3em solid var(--yellow-color);
                 left: calc(50% - 2em);
                 right: calc(50% - 2em);        
                 padding-top: 1em; 
@@ -1036,7 +1651,7 @@ section h1, h2 {
 
             main > section:nth-of-type(5) img{
                 width: 20em;
-                /* background-color: #FFB915; */
+                background-color: var(--yellow-color);
             }
 
 
@@ -1052,7 +1667,7 @@ section h1, h2 {
 
 
             footer {
-                /* background-color: var(--first-footer-deel-color); */
+                background-color: var(--footer-green-color);
                 background-repeat: no-repeat;
                 position: relative;
                 display: flex;
@@ -1079,10 +1694,14 @@ section h1, h2 {
             footer section:nth-of-type(1) h2 {
                 padding: 1em;
                 padding-top: 2em;
+                color: var(--white-titel-color);
             }
 
             footer section:nth-of-type(1) p {
-                padding: .5em;
+                padding: 1em;
+                color: var(--white-text-color);
+
+
             }
 
             footer section:nth-of-type(1) form {
@@ -1095,18 +1714,35 @@ section h1, h2 {
             }
 
             footer section:nth-of-type(1) form input[type=text] {
-                /* background-color: var(--box-color); */
+                background-color: var(--form-color);
+                border: none;
+                padding: .8em;
+                box-shadow: 0 .125em .125em rgb(0 0 0 / 30%); 
+                color: var(--footer-black-color);
+            }
+
+            footer section:nth-of-type(1) form input[type=text]:focus {
+                outline-style: outset;
+                outline-width: .5em;
+                outline-color: var(--yellow-color);
+            }
+
+            footer section:nth-of-type(1) form input[type=submit] {
+                background-color: var(--form-color);
                 border: none;
                 padding: .8em;
                 box-shadow: 0 .125em .125em rgb(0 0 0 / 30%);    
             }
 
-            footer section:nth-of-type(1) form input[type=submit] {
-                /* background-color: var(--box-color); */
-                border: none;
-                padding: .8em;
-                box-shadow: 0 .125em .125em rgb(0 0 0 / 30%);    
+            footer section:nth-of-type(1) form input[type=submit]:focus {
+                background-color: var(--hover-link-color);
+                color: var(--white-text-color);
             }
+
+            footer section:nth-of-type(1) form input[type=submit]:hover {
+                background-color: var(--yellow-color);
+            }
+            
 
             
 
@@ -1146,11 +1782,19 @@ section h1, h2 {
                 height: auto;
             }
 
+            section[aria-label="sociaal"] img:hover {
+                border: solid .175em var(--yellow-color);
+                border-radius: 100%;
+                border-style: outset;
+            }
+
 
 
             /* DERDE SECTION IN FOOTER */
             footer section:nth-of-type(3) {
                 z-index: 10;
+                padding: 0;
+                margin: 0;
             }
 
             footer section:nth-of-type(3) ul {
@@ -1162,7 +1806,7 @@ section h1, h2 {
                 /* flex-flow: row wrap; */
                 justify-content: flex-start;
 
-                /* background-color: var(--footer-color); */
+                background-color: var(--footer-black-color);
                 padding: 1em;
             }
 
@@ -1175,7 +1819,7 @@ section h1, h2 {
             }
 
             footer section:nth-of-type(3) li a {
-                /* color: var(--white-text-color); */
+                color: var(--white-text-color);
                 /* Niet de orginele font maar dit is wat ik kon vinden */
                 font-family: 'Annie Use Your Telescope', cursive;
                 font-size: 1.25em;
@@ -1184,6 +1828,8 @@ section h1, h2 {
 
         }
 
+
+    
 
         
     }

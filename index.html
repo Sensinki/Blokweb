@@ -53,7 +53,7 @@
 			
 				<li>
 					<form action="">
-						<input type="search">
+						<input type="search" placeholder="Ik zoek een...">
 						<button type="submit" aria-label="zoeken">
 							<!-- <img src="images/search.png" alt=""> -->
 						</button>
@@ -66,13 +66,16 @@
 	</header>
 
 	<main>
-		<h1>Ben & Jerry's</h1> 
+		<!-- https://www.a11yproject.com/posts/how-to-hide-content/ -->
+		<h1 class="visually-hidden">Ben & Jerry's</h1> 
 		<!-- Eerste section -->
 		<section class="eerst-section">
-			<h2>Nieuw: A Chocolatey Love-A-Fair</h2>
-			<p>Geïnspireerd door onze vrienden bij Tony's Chocolonely, hebben we een ijssmaak gemaakt om te vieren dat we bij hun missie aansluiten; een missie om een einde te maken aan moderne slavernij in de cacaoteelt. </p>
-			<!-- maak a zoals een button -->
-			<a href="">Lees meer</a>
+			<div>
+				<h2>Nieuw: A Chocolatey Love-A-Fair</h2>
+				<p>Geïnspireerd door onze vrienden bij Tony's Chocolonely, hebben we een ijssmaak gemaakt om te vieren dat we bij hun missie aansluiten; een missie om een einde te maken aan moderne slavernij in de cacaoteelt. </p>
+				<!-- maak a zoals een button -->
+				<a href="">Lees meer</a>
+			</div>
 			<img src="images/hoofd-foto.png" alt="A Chocolatey Love-A-Fair Ben & Jerry's doos">
 			<img src="images/groot-hoofd-foto.png" alt="A Chocolatey Love-A-Fair Ben & Jerry's doos">
 		</section>
@@ -170,6 +173,8 @@
 			</ul>
 
 		</section>
+
+		<button></button>
 	</main>
 	
 	<footer>
