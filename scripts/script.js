@@ -20,3 +20,9 @@ function hamburgerMenuButtonKlik() {
     hamburgerMenuButton.classList.toggle("kruisje");
 }
 
+// TWEEDE PAGINA "DETAILS"
+// Button wordt zichtbaar 
+
+var dropdownButton = document.querySelector("main ul li div button");
+var dropdownButton = document.querySelector("main ul li div ul");
+

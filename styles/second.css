@@ -1,0 +1,1229 @@
+/*****************/
+/* WEBSITE FONTS */
+/*****************/
+
+@font-face {
+    font-family: 'chunkfive_printregular';
+    src: url('/assets/fonts/Chunkfive/chunkfive_print_400-webfont.woff2') format('woff2'),
+         url('/assets/fonts/Chunkfive/chunkfive_print_400-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Note voor mijzelf: Gebruik die twee als font in de pagina */
+/* font-family: 'proxima-nova', 'sans-serif'; */
+/* font-family: 'chunkfive_printregular', 'sans-serif'; */
+/* font-family: 'Annie Use Your Telescope', cursive; */
+
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+    box-sizing:border-box;  
+}
+  
+button, summary {
+      cursor: pointer;
+}
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* kleuren */
+    --titel-black-color:#191919;
+	--p-black-color:#191919;
+    --footer-black-color:#191919;
+    --laatbezorgen-text-white-color: var(--white-text-color);
+	--sticky-header-blue-color: #003E55;
+	--laatbezorgen-knop-black-color: #2C2A29;
+	--white-titel-color: #FFFFFF;
+    --white-text-color: #FFFFFF;
+    --box-button-color: #FFFFFF;
+    --form-color:#FFFFFF;
+	--yellow-color: #FFB915;
+    --yellow-transparent-color: #ffb915e1;
+	--link-color: #0475A1;
+    --blue-link-color: var(--link-color);
+    --hover-link-color: #ffb300b6;
+	--footer-green-color: #3A780E;
+	--website-background-color: linear-gradient(180deg, rgba(87,161,205,1) 0%, rgba(212,227,239,1) 100%);
+}
+
+/* https://css-tricks.com/dark-modes-with-css/ */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --titel-black-color:#000000;
+        --p-black-color:#ffffff;
+        --footer-black-color:#191919;
+        --laatbezorgen-text-white-color: var(--white-text-color);
+        --sticky-header-blue-color: #003E55;
+        --laatbezorgen-knop-black-color: #2C2A29;
+        --white-titel-color: #FFFFFF;
+        --white-text-color: #FFFFFF;
+        --box-button-color: #005473;
+        --tweede-box-color: #003245;
+        --form-color:#FFFFFF;
+        --yellow-color: #FFB915;
+        --yellow-transparent-color: #ffb915e1;
+        --link-color: #f8f8f8;
+        --hover-link-color: #ffb300ef;
+        --footer-green-color: #275d00;
+        --blue-link-color: var(--box-button-color);
+        --website-background-color: linear-gradient(180deg, #00202c 0%, rgb(74, 123, 151) 100%);
+    }
+
+}
+
+:focus {
+    background-color: var(--yellow-color);
+    color: var(--white-titel-color);
+    outline: none;
+    border-radius: .2em;    
+}
+
+::selection {
+    background: #ed9237;
+    color: #000;
+    text-shadow: none;
+}
+
+
+/*********************/
+/* ALLES INDIVIDUEEL */
+/*********************/
+
+/* ALLES */
+
+* {
+    /* Font van alle elementen */
+	font-family: 'proxima-nova', 'sans-serif';
+    margin: 0;
+    padding: 0;
+}
+
+/* BODY */
+
+body {
+	background-image: var(--website-background-color);
+	background-repeat: no-repeat;
+	height: 100%;
+	margin:0;
+	/* position: relative; */
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* LINKS */
+a {
+	text-decoration: none;
+    appearance: none;
+    font-family: inherit;
+}
+
+/* hover voor alle linken */
+a:hover {
+    color: var(--yellow-color);
+}
+
+a:active {
+    color: var(--yellow-transparent-color);
+}
+
+
+li {
+    /* Om punten weg te halen */
+    list-style: none;
+}
+
+h2 {
+	font-size: 2em;
+	padding: 1em;
+}
+
+/* BUTTON */
+button {
+    appearance: none;
+    font-family: inherit;
+}
+
+
+
+/* HEADER */
+
+header {
+	/* background kleur */
+	background-color: var(--sticky-header-blue-color);
+	/* om header sticky te maken */
+	position: sticky;
+	/* voor Safari */
+	position: -webkit-sticky; 
+	/* waar wil ik het stickky maken */
+	top: 0;
+
+	/* flex maken zodat de elementen naast elkaar nog beter kunnen staan */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+
+	/* elementen toestemming geven om een andere rij te staan */
+	/* hulp gekregen van Sanne */
+	flex-wrap: wrap;
+	
+	/* om header helemaal voor halen */
+	z-index: 11;
+}
+
+/* alle linken in header */
+header a {
+	text-decoration: none;
+	font-family: 'proxima-nova', 'sans-serif';
+}
+
+/* "laat ben en jerry's..." tekst goede plek zetten START */
+header > p {
+	order:-2;
+	background-color: var(--laatbezorgen-knop-black-color);
+	color: var(--laatbezorgen-text-white-color);
+	width:100%;
+	margin: 0;
+	padding-top: .02em;
+	padding-bottom: .02em;
+	text-align: center;
+	font-family: 'proxima-nova', 'sans-serif';
+}
+
+header > p a {
+	color: var(--laatbezorgen-text-white-color);
+}
+/* "laat ben en jerry's..." tekst goede plek zetten END */
+
+/* MAIN */
+
+
+/* styling alle sections */
+section {
+	position: relative;
+ 	text-align: center;
+  	color: var(--p-black-color);
+    margin: 0;
+    padding: 0;
+	/* om section elementen onder de header te zetten */
+}
+
+/* alle h1 en h2 titels in het sections */
+section h1, h2 {
+	font-family: 'chunkfive_printregular', 'sans-serif';
+}
+
+/* COOKIE-INSTELLINGEN */
+main > button {
+    background-image: url(/images/oneTrustLogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
+    z-index: 100000;
+    border: none;
+    min-height: 4em;
+    min-width: 4em;
+
+    position: fixed;
+    bottom: 3em;
+    left: 1.5%;
+}
+
+main > button:focus {
+    background-color: transparent;
+}
+
+
+
+
+/**************************/
+/* KLEIN EN MIDDEL SCHERM */
+/**************************/
+
+@media (min-width: 1em) {
+	
+    /* HEADER */
+
+    /* Logo part START */
+	header > a:nth-of-type(1) {
+		margin-right:auto;
+        order: -1;
+	}
+	
+	header > a:nth-of-type(1) img {
+		height: auto;
+		width: 30vw;
+  	}
+    /* Logo part END */
+
+    /* hamburger menu inside styling START */
+    header nav ul li {
+        list-style: none;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    header nav ul li a {
+        font-family: 'chunkfive_printregular', 'sans-serif';
+        margin-bottom: 1em;
+        font-size: 1.5em;
+        flex-wrap: nowrap;
+        text-align: center;
+        color: var(--white-titel-color);
+    }
+
+    header nav ul li:nth-of-type(1) a {
+        margin-top: 7em;
+    }
+
+
+    header nav ul li:nth-of-type(6) form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1em;
+    }
+
+
+    header nav ul li:nth-of-type(6) form button{
+        background-color: var(--white-titel-color);        
+        width: 3em;    
+    }
+
+    header nav ul li:nth-of-type(6) form input {
+
+    }
+
+    header nav ul li:nth-of-type(6) form button::after{
+        content: "Zoek";
+    }
+
+    header nav ul li:nth-of-type(6) form button:hover{
+        background-color: var(--yellow-color);
+    }
+    /* hamburger menu inside styling END */
+
+    
+
+    /* hamburger menu knop styling START */
+
+    /* Om hamburger menu te openen */
+    /* Hulp gekregen van Sanne */
+    nav {
+        position: fixed;
+        inset: 0;
+        background-color: var(--blue-link-color);
+        transform: translateY(-100%);
+        transition: .5s;
+    }
+
+    header.menuOpen nav {
+        transform: translateY(0);
+    }
+    /* tot hier */
+
+    header button {
+        display: grid;
+        place-items:center;
+        background-color: transparent;
+        border: none;
+        width: 1.5em;
+        height: 1.5em;
+        position: relative;
+        margin-right: 1em;
+        order:2;
+        z-index: 100;
+    }
+
+    header button:focus {
+        background-color: var(--hover-link-color);
+    }
+
+    header button span {
+        /* position: absolute; */
+        width: 1.2em;
+        height: .2em;
+        background-color: var(--white-text-color);
+        grid-row-start:1;
+        grid-column-start:1; 
+        transition-duration: .5s;
+    }
+
+    header button span:nth-of-type(1) {
+        transform:translateY(-.4em);
+    }
+
+    header button span:nth-of-type(3) {
+        transform:translateY(.4em);
+    }
+	/* animatie werkt niet !VRAAG! */
+    header button.kruisje span:nth-of-type(1) {
+        transform:rotate(45deg) scaleX(1.25);
+    }
+
+    header button.kruisje span:nth-of-type(2) {
+       opacity: 0;
+        /* transform: scaleX(0); */
+    }
+
+    header button.kruisje span:nth-of-type(3) {
+        transform:rotate(-45deg) scaleX(1.25);
+    }
+    /* hamburger menu knop styling END */
+
+    /* tweede child van het parent in het header ("nu bezorgen" linkje) START */
+    header > a:nth-of-type(2) {
+        /* order: 1; */
+        color: var(	--white-text-color);
+        text-decoration: none;
+        font-family: 'chunkfive_printregular', 'sans-serif';
+        font-weight: 400;
+        text-transform: uppercase;
+        width: 7rem;
+        text-align: center;
+        border-right: .125em solid var(--white-text-color);
+        padding-right: 1em;
+    }
+
+    header > a:nth-of-type(2):hover {
+        color: var(--yellow-color);
+        /* hier mag nog meer beweging/animatie */
+    }
+    /* tweede child van het parent in het header ("nu bezorgen" linkje) END */
+
+
+	/* MAIN */
+
+	/* EERSTE SECTION */
+
+	main section:nth-of-type(1) {
+        background-repeat: no-repeat;
+        text-align: center;
+        position: relative;
+        margin: 0;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: max-content max-content max-content;
+    }
+
+    /* Image's */
+    main section:nth-of-type(1) img{
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        /* https://css-tricks.com/almanac/properties/o/object-position/ */
+        object-position: center top;
+        display: block;
+
+		grid-row-start: 1;
+    }
+
+    /* Titel */
+    main section:nth-of-type(1) h1 {
+		margin: .5em;
+
+        font-size: 3em;
+        color: var(--white-titel-color);
+    }
+
+    /* P element */
+    main section:nth-of-type(1) p {
+        width: 100%;
+		padding: 1em;
+		padding-left: 2em;
+		padding-right: 2em;
+
+    }
+
+
+	/* TWEEDE SECTION */
+
+	main section:nth-of-type(2) {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	/* Om de gele lijn toe te voegen boven op h2 */
+	main section:nth-of-type(2) h2::before {
+		content: " ";
+		display: block;
+		position: relative;
+		width: 4em;
+		border-top: .3em solid var(--yellow-color);
+		left: calc(50% - 2em);
+		right: calc(50% - 2em);        
+		padding-top: 1em; 
+	}
+
+	section:nth-of-type(2) ul{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 1em;
+	}
+
+	section:nth-of-type(2) ul li {
+		width: 15em;
+
+		
+	}
+
+	section:nth-of-type(2) ul li div{
+		display: grid;
+		grid-template-columns: 15em;
+		grid-template-rows: 15em 3.5em 2em;
+		gap: .5em;
+		align-items: center;
+		justify-items: center;
+		width: 15em;
+
+		position: relative;
+
+	}
+
+	section:nth-of-type(2) ul li h3 {
+		width: 10em;
+		order: 2;
+		justify-self: center;
+	}
+
+	section:nth-of-type(2) ul li p {
+		width: 11em;
+		height: 10em;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		right: calc(50% - 5.5em);
+		left: calc(50% - 5.5em);
+		background-image: url(/images/barn.jpeg);
+		color: var(--titel-black-color);
+		padding: .5em;
+		position: relative;
+		
+		top: -12em;
+
+		opacity: 0;
+		transition: .5s;
+
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
+
+	/* https://codepen.io/shooft/pen/ZExqBxV */
+	section:nth-of-type(2) ul li p:hover {
+		opacity: 200;
+		transition: .5s;
+		transform: rotate(5deg);
+	}
+
+	section:nth-of-type(2) ul li button {
+		width: 5em;
+		order: 3;
+		padding: .25em;
+		margin: .5em;
+		border: var(--yellow-color);
+
+		position: relative;
+    	padding: .75em 7em .75em 3em;
+    	background: var(--box-button-color);
+    	color: var(--link-color);
+    	font-weight: bold;
+
+	}	
+
+	section:nth-of-type(2) ul li button::after {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 1em;
+		height: 100%;
+		background-image: url(/images/barn.jpeg);
+	}
+
+	section:nth-of-type(2) ul li button:hover {
+		background-color: var(--yellow-color);
+	}	
+
+	
+	
+
+
+
+	/* DERDE SECTION */ 
+
+	/* Om de gele lijn toe te voegen boven op h2 */
+	main section:nth-of-type(3) h2::before {
+		content: " ";
+		display: block;
+		position: relative;
+		width: 4em;
+		border-top: .3em solid var(--yellow-color);
+		left: calc(50% - 2em);
+		right: calc(50% - 2em);        
+		padding-top: 1em; 
+	}
+	
+	section:nth-of-type(3) ul{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	section:nth-of-type(3) ul li {
+		width: 15em;
+
+		
+	}
+
+	section:nth-of-type(3) ul li div{
+		display: grid;
+		grid-template-columns: 15em;
+		grid-template-rows: 15em 3.5em 2em;
+		align-items: center;
+		justify-items: center;
+		width: 15em;
+		gap: 1em;
+		position: relative;
+
+	}
+
+	section:nth-of-type(3) ul li h3 {
+		width: 10em;
+		order: 2;
+		justify-self: center;
+	}
+
+	section:nth-of-type(3) ul li p {
+		width: 11em;
+		height: 10em;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		right: calc(50% - 5.5em);
+		left: calc(50% - 5.5em);
+		background-image: url(/images/barn.jpeg);
+		color: var(--titel-black-color);
+		padding: .5em;
+		position: relative;
+		
+		top: -12em;
+
+		opacity: 0;
+		transition: .5s;
+
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
+
+	/* https://codepen.io/shooft/pen/ZExqBxV */
+	section:nth-of-type(3) ul li p:hover {
+		opacity: 200;
+		transition: .5s;
+		transform: rotate(5deg);
+	}
+
+	section:nth-of-type(3) ul li button {
+		width: 5em;
+		order: 3;
+		padding: .25em;
+		margin: 2em;
+		border: var(--yellow-color);
+
+		position: relative;
+    	padding: .75em 7em .75em 3em;
+    	background: var(--box-button-color);
+    	color: var(--link-color);
+    	font-weight: bold;
+
+	}	
+
+	section:nth-of-type(3) ul li button::after {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 1em;
+		height: 100%;
+		background-image: url(/images/barn.jpeg);
+	}
+
+	section:nth-of-type(3) ul li button:hover {
+		background-color: var(--yellow-color);
+	}	
+
+
+
+	
+
+	/* VIERDE SECTION */
+
+	/* Om de gele lijn toe te voegen boven op h2 */
+	main section:nth-of-type(4) h2::before {
+		content: " ";
+		display: block;
+		position: relative;
+		width: 4em;
+		border-top: .3em solid var(--yellow-color);
+		left: calc(50% - 2em);
+		right: calc(50% - 2em);        
+		padding-top: 1em; 
+	}
+
+
+
+	/* FOOTER */
+
+	footer {
+        background-color: var(--footer-green-color);
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* EERSTE SECTION IN FOOTER */
+    footer section:nth-of-type(1) {
+        display: flex;
+        flex-direction: column;
+
+        /* position: absolute; */
+        right: calc(50% - 10em);
+        left: calc(50% - 10em);
+
+        padding: 0;
+        margin: 0;
+        width: 20em;
+
+        z-index: 10;
+    }
+
+    footer section:nth-of-type(1) h2 {
+        padding: 1em;
+        padding-top: 2em;
+
+        color: var(--white-titel-color);
+    }
+
+    footer section:nth-of-type(1) p {
+        padding: .5em;
+        margin-bottom: 1em;
+
+        color: var(--white-text-color);
+    }
+
+    footer section:nth-of-type(1) form {
+        padding: .5em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        }
+
+    footer section:nth-of-type(1) form input[type=text] {
+        background-color: var(--form-color);
+        color: var(--footer-black-color);
+        border: none;
+        padding: .8em;
+        box-shadow: 0 .125em .125em rgb(0 0 0 / 30%);    
+    }
+
+    footer section:nth-of-type(1) form input[type=text]:focus {
+        outline-style: outset;
+        outline-width: .5em;
+        outline-color: var(--yellow-color);
+    }
+
+    footer section:nth-of-type(1) form input[type=submit] {
+        background-color: var(--form-color);
+        border: none;
+        padding: .8em;
+        box-shadow: 0 .125em .125em rgb(0 0 0 / 30%);    
+    }
+
+    footer section:nth-of-type(1) form input[type=submit]:hover {
+        background-color: var(--yellow-color);
+    }
+
+    footer section:nth-of-type(1) form input[type=submit]:focus {
+        background-color: var(--yellow-color);
+        color: var(--white-text-color);
+    }
+
+    
+
+
+
+    /* TWEEDE SECTION IN FOOTER */ 
+    section[aria-label="sociaal"] {
+        display: block;
+        justify-content: center;
+        /* position: absolute; */
+        right: calc(50% - 12em);
+        left: calc(50% - 10em);
+
+        padding: 0;
+        margin: 0;
+        width: 20em;
+
+        z-index: 10;
+    }
+
+    section[aria-label="sociaal"] ul {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 3em 3em 3em;
+        grid-template-rows: 1fr;
+        gap: 1em;
+    }
+
+    section[aria-label="sociaal"] ul li {
+        padding-top: 3em;
+        padding-bottom: 2em;
+    }
+
+    section[aria-label="sociaal"] img {
+        width: 3em;
+        height: auto;
+    }
+
+    section[aria-label="sociaal"] img:hover {
+        border: solid .175em var(--yellow-color);
+        border-radius: 100%;
+        border-style: outset;
+    }
+
+
+
+
+    /* DERDE SECTION IN FOOTER */
+    footer section:nth-of-type(3) {
+        z-index: 10;
+        padding: 0;
+        margin: 0;
+    }
+
+    footer section:nth-of-type(3) ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        /* flex-flow: row wrap; */
+        justify-content: flex-start;
+
+        background-color: var(--footer-black-color);
+        padding: 1em;
+    }
+
+
+    footer section:nth-of-type(3) li {
+        display: flex;
+        flex-direction: column;
+        padding: .5em;
+    }
+
+    footer section:nth-of-type(3) li a {
+        color: var(--white-text-color);
+        /* Niet de orginele font maar dit is wat ik kon vinden */
+        font-family: 'Annie Use Your Telescope', cursive;
+        letter-spacing: .05em;
+    }
+    
+    footer section:nth-of-type(3) li a:hover {
+        color: var(--yellow-color);
+    }
+}
+
+
+
+/*****************/
+/* MIDDEL SCHERM */
+/*****************/
+
+
+@media (min-width: 35em) {
+
+	/* Logo START */
+	header {
+		padding-bottom: 1em;
+	}
+	header > a:nth-of-type(1) {
+		margin-right:auto;
+		order: -1;
+	}
+
+	header > a:nth-of-type(1) img {
+		height: auto;
+		width: 10em;
+	}
+	/* Logo END */
+
+
+	@media (min-width: 48em) {
+
+
+		/* HEADER */
+
+
+		/* hamburger menu inside styling START */
+		header nav ul li {
+			list-style: none;
+			text-transform: uppercase;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		header nav ul li a {
+			font-family: 'chunkfive_printregular', 'sans-serif';
+			color: var(--white-titel-color);
+
+			margin-bottom: 1em;
+			font-size: 1.5em;
+			flex-wrap: nowrap;
+			text-align: center;
+		}
+
+		header nav ul li:nth-of-type(1) a {
+			margin-top: 7em;
+		}
+		/* hamburger menu inside styling END */
+
+
+		/* hamburger menu knop styling START */
+
+		/* Om hamburger menu te openen */
+		/* Hulp gekregen van Sanne */
+		nav {
+			position: fixed;
+			inset: 0;
+			background-color: var(--yellow-transparent-color);
+			transform: translateY(-100%);
+			transition: .5s;
+		}
+
+		header.menuOpen nav {
+			transform: translateY(0);
+		}
+		/* tot hier */
+
+		header button {
+			display:grid;
+			place-items:center;
+			background-color: transparent;
+			border: none;
+			width: 1.5em;
+			height: 1.5em;
+			position: relative;
+			margin-right: 2em;
+			order:2;
+			z-index: 100;
+		}
+
+		header button span {
+			/* position: absolute; */
+			width: 1.2em;
+			height: .2em;
+			background-color: var(--white-text-color);
+			grid-row-start:1;
+			grid-column-start:1; 
+			transition-duration: .5s;
+		}
+
+		header button span:nth-of-type(1) {
+			transform:translateY(-.4em);
+		}
+
+		header button span:nth-of-type(3) {
+			transform:translateY(.4em);
+		}
+
+		header button.kruisje span:nth-of-type(1) {
+			transform:rotate(45deg) scaleX(1.25);
+		}
+
+		header button.kruisje span:nth-of-type(2) {
+		opacity: 0;
+			/* transform: scaleX(0); */
+		}
+
+		header button.kruisje span:nth-of-type(3) {
+			transform:rotate(-45deg) scaleX(1.25);
+		}
+		/* hamburger menu knop styling END */
+
+		/* tweede child van het parent in het header ("nu bezorgen" linkje) START */
+		header > a:nth-of-type(2) {
+			/* order: 1; */
+			color: var(	--white-text-color);
+			text-decoration: none;
+			font-family: 'chunkfive_printregular', 'sans-serif';
+			font-weight: 400;
+			font-size: 1.1em;
+			text-transform: uppercase;
+			width: 10em;
+			text-align: center;
+			border-right: .125em solid var(--white-text-color);
+			padding-right: 1em;
+		}
+
+		header > a:nth-of-type(2):hover {
+			color: var(--yellow-color);
+			/* hier mag nog meer beweging/animatie */
+		}
+		/* tweede child van het parent in het header ("nu bezorgen" linkje) END */
+
+
+
+		/* MAIN */
+
+		/* EERSTE SECTION */
+
+		main section:nth-of-type(1) {
+			background-repeat: no-repeat;
+			text-align: center;
+			position: relative;
+			margin: 0;
+			display: grid;
+			grid-template-columns: 100%;
+			grid-template-rows: max-content max-content max-content;
+		}
+
+		main section:nth-of-type(1) img{
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			/* https://css-tricks.com/almanac/properties/o/object-position/ */
+			object-position: center top;
+			display: block;
+	
+			grid-row-start: 1;
+		}
+	
+		/* Titel */
+		main section:nth-of-type(1) h1 {
+			margin: .5em;
+	
+			font-size: 3em;
+			color: var(--white-titel-color);
+		}
+	
+		/* P element */
+		main section:nth-of-type(1) p {
+			width: 100%;
+			padding: 1em;
+			padding-left: 2em;
+			padding-right: 2em;
+	
+		}
+	
+
+
+		/* TWEEDE SECTION */
+
+		main section:nth-of-type(2) {
+			margin-left: 15%;
+			margin-right: 15%;
+		}
+
+
+		/* DERDE SECTION */
+
+		main section:nth-of-type(3) {
+			margin-left: 15%;
+			margin-right: 15%;
+		}
+		
+		
+
+		/* FOOTER */
+
+
+		footer {
+			background-color: var(--footer-green-color);
+			background-repeat: no-repeat;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+		}
+
+
+		/* EERSTE SECTION IN FOOTER */
+		footer section:nth-of-type(1) {
+			display: flex;
+			flex-direction: column;
+
+			/* position: absolute; */
+			right: calc(50% - 10em);
+			left: calc(50% - 10em);
+
+			padding: 0;
+			margin: 0;
+			width: 20em;
+
+			z-index: 10;
+		}
+
+		footer section:nth-of-type(1) h2 {
+			padding: 1em;
+			padding-top: 2em;
+			color: var(--white-titel-color);
+		}
+
+		footer section:nth-of-type(1) p {
+			padding: 1em;
+			color: var(--white-text-color);
+
+
+		}
+
+		footer section:nth-of-type(1) form {
+			padding: .5em;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			justify-content: center;
+			align-items: center;
+		}
+
+		footer section:nth-of-type(1) form input[type=text] {
+			background-color: var(--form-color);
+			border: none;
+			padding: .8em;
+			box-shadow: 0 .125em .125em rgb(0 0 0 / 30%); 
+			color: var(--footer-black-color);
+		}
+
+		footer section:nth-of-type(1) form input[type=text]:focus {
+			outline-style: outset;
+			outline-width: .5em;
+			outline-color: var(--yellow-color);
+		}
+
+		footer section:nth-of-type(1) form input[type=submit] {
+			background-color: var(--form-color);
+			border: none;
+			padding: .8em;
+			box-shadow: 0 .125em .125em rgb(0 0 0 / 30%);    
+		}
+
+		footer section:nth-of-type(1) form input[type=submit]:focus {
+			background-color: var(--hover-link-color);
+			color: var(--white-text-color);
+		}
+
+		footer section:nth-of-type(1) form input[type=submit]:hover {
+			background-color: var(--yellow-color);
+		}
+		
+
+		
+
+
+
+		/* TWEEDE SECTION IN FOOTER */ 
+		section[aria-label="sociaal"] {
+			display: block;
+			justify-content: center;
+			/* position: absolute; */
+			right: calc(50% - 12em);
+			left: calc(50% - 10em);
+
+			padding: 0;
+			margin: 0;
+			width: 20em;
+
+			z-index: 10;
+		}
+
+		section[aria-label="sociaal"] ul {
+			display: grid;
+			justify-content: center;
+			grid-template-columns: 3em 3em 3em;
+			grid-template-rows: 1fr;
+			gap: 1em;
+		}
+
+		section[aria-label="sociaal"] ul li {
+			padding-top: 3em;
+			padding-bottom: 2em;
+		}
+		
+
+		section[aria-label="sociaal"] img {
+			width: 3em;
+			height: auto;
+		}
+
+		section[aria-label="sociaal"] img:hover {
+			border: solid .175em var(--yellow-color);
+			border-radius: 100%;
+			border-style: outset;
+		}
+
+
+
+		/* DERDE SECTION IN FOOTER */
+		footer section:nth-of-type(3) {
+			z-index: 10;
+			padding: 0;
+			margin: 0;
+		}
+
+		footer section:nth-of-type(3) ul {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			/* flex-flow: row wrap; */
+			justify-content: flex-start;
+
+			background-color: var(--footer-black-color);
+			padding: 1em;
+		}
+
+
+		footer section:nth-of-type(3) li {
+			display: flex;
+			flex-direction: column;
+			padding: .5em;
+			padding-right: 3em;
+		}
+
+		footer section:nth-of-type(3) li a {
+			color: var(--white-text-color);
+			/* Niet de orginele font maar dit is wat ik kon vinden */
+			font-family: 'Annie Use Your Telescope', cursive;
+			font-size: 1.25em;
+			letter-spacing: .05em;
+		}
+
+
+	}
+}		
