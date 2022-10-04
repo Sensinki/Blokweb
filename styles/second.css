@@ -263,6 +263,7 @@ main > button:focus {
         order: -1;
 	}
 	
+    
 	header > a:nth-of-type(1) img {
 		height: auto;
 		width: 30vw;
@@ -302,11 +303,13 @@ main > button:focus {
 
     header nav ul li:nth-of-type(6) form button{
         background-color: var(--white-titel-color);        
-        width: 3em;    
+        width: 3em;   
+        height: 2.25em; 
     }
 
     header nav ul li:nth-of-type(6) form input {
-
+        width: 10em;
+        height: 2.5em;
     }
 
     header nav ul li:nth-of-type(6) form button::after{
@@ -318,7 +321,7 @@ main > button:focus {
     }
     /* hamburger menu inside styling END */
 
-    
+
 
     /* hamburger menu knop styling START */
 
@@ -353,6 +356,7 @@ main > button:focus {
     header button:focus {
         background-color: var(--hover-link-color);
     }
+    
 
     header button span {
         /* position: absolute; */
@@ -371,7 +375,7 @@ main > button:focus {
     header button span:nth-of-type(3) {
         transform:translateY(.4em);
     }
-	/* animatie werkt niet !VRAAG! */
+/* animatie werkt niet !VRAAG! */
     header button.kruisje span:nth-of-type(1) {
         transform:rotate(45deg) scaleX(1.25);
     }
@@ -479,11 +483,6 @@ main > button:focus {
 		gap: 1em;
 	}
 
-	section:nth-of-type(2) ul li {
-		width: 15em;
-
-		
-	}
 
 	section:nth-of-type(2) ul li div{
 		display: grid;
@@ -693,11 +692,58 @@ main > button:focus {
 		padding-top: 1em; 
 	}
 
+	main section:nth-of-type(4) ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		gap: 1em;
+
+		margin-bottom: 3em;
+
+		overflow-x: scroll;
+		overflow-y: hidden;
+		
+	}
+
+	main section:nth-of-type(4) li {
+		width: 20em;
+	}
+
+	main section:nth-of-type(4) li a:hover {
+		color: var(--white-titel-color);
+	}
+
+
+	main section:nth-of-type(4) figure {
+		width: 20em;
+		background-image: url(/images/barn.jpeg);
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	main section:nth-of-type(4) img {
+		margin: .5em;
+	}
+
+	main section:nth-of-type(4) figcaption {
+		width: 10em;
+		display: flex;
+		justify-self: center;
+		align-self: center;
+		
+	}
+
+
+
 
 
 	/* FOOTER */
 
-	footer {
+
+    footer {
         background-color: var(--footer-green-color);
         background-repeat: no-repeat;
         position: relative;
@@ -832,10 +878,8 @@ main > button:focus {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
         flex-wrap: wrap;
-        /* flex-flow: row wrap; */
-        justify-content: flex-start;
 
         background-color: var(--footer-black-color);
         padding: 1em;
@@ -858,6 +902,8 @@ main > button:focus {
     footer section:nth-of-type(3) li a:hover {
         color: var(--yellow-color);
     }
+
+
 }
 
 
@@ -922,11 +968,11 @@ main > button:focus {
 		nav {
 			position: fixed;
 			inset: 0;
-			background-color: var(--yellow-transparent-color);
+			background-color: var(--blue-link-color);
 			transform: translateY(-100%);
 			transition: .5s;
 		}
-
+	
 		header.menuOpen nav {
 			transform: translateY(0);
 		}
@@ -1161,15 +1207,10 @@ main > button:focus {
 			z-index: 10;
 		}
 
-		section[aria-label="sociaal"] ul {
-			display: grid;
-			justify-content: center;
-			grid-template-columns: 3em 3em 3em;
-			grid-template-rows: 1fr;
-			gap: 1em;
-		}
+		
 
 		section[aria-label="sociaal"] ul li {
+			padding: 0;
 			padding-top: 3em;
 			padding-bottom: 2em;
 		}
@@ -1223,7 +1264,6 @@ main > button:focus {
 			font-size: 1.25em;
 			letter-spacing: .05em;
 		}
-
 
 	}
 }		

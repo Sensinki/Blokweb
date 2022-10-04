@@ -436,9 +436,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Bronnenlijst
 
 <details open>
-  <summary>continu bijhouden terwijl je werkt</summary>
+  <summary>Continu bijhouden terwijl je werkt</summary>
 
-  Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
   1. https://codepen.io/shooft/pen/vYGZqYV (positioneren)
   2. https://codepen.io/shooft/pen/dymRMBZ?editors=0110 (voor hamburger menu knop)
